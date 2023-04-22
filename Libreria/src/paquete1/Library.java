@@ -129,6 +129,14 @@ public class Library implements IOperatiosLibrary {
         return null;
     }
 
+    public boolean VerifyContent(String code){
+        Book searchBook = SearchBook(code);
+        if(searchBook!=null){
+            if(searchBook.getNcopy()>0)
+                return true;
+        }
+        return false;
+    }
     @Override
     public String toString() {
         String c = "";
