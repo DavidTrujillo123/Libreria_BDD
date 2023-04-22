@@ -33,6 +33,9 @@ public class Library implements IOperatiosLibrary {
         Student st3 = new Student("0034567890", "Pedro", "Ramírez");
         Student st4 = new Student("0045678901", "Ana", "Martínez");
         Student st5 = new Student("0056789012", "Carlos", "Gómez");
+        st1.AddBook(b10);
+        st2.AddBook(b10);
+        st3.AddBook(b10);
 
         Book[] bookList = new Book[10];
         bookList[0] = b1;
@@ -42,7 +45,8 @@ public class Library implements IOperatiosLibrary {
         bookList[4] = b5;
         bookList[5] = b6;
         bookList[6] = b7;
-
+        bookList[7] = b10;
+        
         Student[] studentList = new Student[10];
         studentList[0] = st1;
         studentList[1] = st2;
@@ -85,7 +89,8 @@ public class Library implements IOperatiosLibrary {
     @Override
     public void Insert(Book obj) {
         int index = getIndexBook(obj.getCode());
-        books.add(obj);
+        //if(index==-1)
+            books.add(obj);
     }
 
     @Override
@@ -138,14 +143,33 @@ public class Library implements IOperatiosLibrary {
         return null;
     }
 
-    public boolean VerifyContent(String code){
+    public boolean VerifyContent(String code) {
         Book searchBook = SearchBook(code);
-        if(searchBook!=null){
-            if(searchBook.getNcopy()>0)
+        if (searchBook != null) {
+            if (searchBook.getNcopy() > 0) {
                 return true;
+            }
         }
         return false;
     }
+
+    public ArrayList<Student> SearchStudentsByBooks(String ID) {
+        ArrayList<Student> res = new ArrayList<Student>();
+
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i) != null) {
+                ArrayList<Book> studentBooks = students.get(i).getBooks_student();
+                for (int j = 0; j < studentBooks.size(); j++) {
+                    if (studentBooks.get(j).getCode().equals(ID)) {
+                        res.add(students.get(i));
+                    }
+                }
+            }
+        }
+        
+        return ((!res.isEmpty()) ? res : null);
+    }
+
     @Override
     public String toString() {
         String c = "";

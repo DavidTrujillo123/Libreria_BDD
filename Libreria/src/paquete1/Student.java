@@ -58,7 +58,10 @@ public class Student {
     public void AddBook(Book book){
         this.books_student.add(book);
     }
-
+    public String stringData(){        
+        return  "Cedula: "+this.cedula+"\nName: "+this.name+"\nSurname: "
+                +this.surname+"\n\n";
+    }
     @Override
     public String toString() {
         String c="";

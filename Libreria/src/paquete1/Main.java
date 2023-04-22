@@ -4,6 +4,8 @@
  */
 package paquete1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author david
@@ -33,7 +35,7 @@ public class Main {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+//
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -41,7 +43,7 @@ public class Main {
             }
         });
         
-        
+//        
 //        Book b1 = new Book("Fiction", "E12345", "To Kill a Mockingbird", "Harper Lee", "HarperCollins", "Literature", 1960, 20);
 //        Book b2 = new Book("Science", "A67890", "A Brief History of Time", "Stephen Hawking", "Bantam Books", "Physics", 1988, 0);
 //        Book b3 = new Book("Biography", "D24680", "Steve Jobs", "Walter Isaacson", "Simon & Schuster", "Business", 2011, 0);
@@ -65,16 +67,20 @@ public class Main {
 //        Student st4 = new Student("0045678901", "Ana", "Martínez");
 //        Student st5 = new Student("0056789012", "Carlos", "Gómez");
 //
+//        
 //        Student[] students = new Student[10];
 //        students[0] = st1;
 //        students[1] = st2;
 //        students[2] = st3;
 //        
+//        
 //        Library libreria = new Library();
-//        libreria.Delete("E12345");
-//        libreria.Insert(b9);
-//        System.out.println(libreria.toString());
-//        System.out.println(libreria.SearchBook("24601"));
+////        System.out.println(libreria.toString());
+//        ArrayList<Student> studentBooks = libreria.SearchStudentsByBooks("80246");
+//        for (Student studentBook : studentBooks) {
+//            if(studentBook!=null)
+//                System.out.println(studentBook.stringData());
+//        }
         
     }
 }
