@@ -29,6 +29,70 @@ public class Book {
         this.ncopy = ncopy;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getEditorial() {
+        return editorial;
+    }
+
+    public void setEditorial(String editorial) {
+        this.editorial = editorial;
+    }
+
+    public String getMateria() {
+        return materia;
+    }
+
+    public void setMateria(String materia) {
+        this.materia = materia;
+    }
+
+    public int getYear_edition() {
+        return year_edition;
+    }
+
+    public void setYear_edition(int year_edition) {
+        this.year_edition = year_edition;
+    }
+
+    public int getNcopy() {
+        return ncopy;
+    }
+
+    public void setNcopy(int ncopy) {
+        this.ncopy = ncopy;
+    }
+    
     
     @Override
     public String toString() {

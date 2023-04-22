@@ -9,8 +9,10 @@ package paquete1;
  * @author david
  */
 public interface IOperatiosLibrary {
-    public void Insert(Object obj);
-    public void Delete(Object obj);
-    public void Modify(Object obj);
-    public void Search(Object obj);
+    public void Insert(Book obj);
+    public void Delete(String ID);
+    public void ModifyBook(String ID_after, Book new_book);
+    public void ModifyStudent(String ID, String IDreturn_book);
+    public Book SearchBook(String ID);
+    public Student SearchStudent(String ID);
 }

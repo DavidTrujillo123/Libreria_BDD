@@ -4,6 +4,8 @@
  */
 package paquete1;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author david
@@ -12,32 +14,60 @@ public class Student {
     private String cedula;
     private String name;
     private String surname;
-    private Book[] books_student;
+    private ArrayList<Book> books_student;
 
     public Student(String cedula, String name, String surname) {
         this.cedula = cedula;
         this.name = name;
         this.surname = surname;
-        this.books_student = new Book[10];
+        this.books_student = new ArrayList<Book>();
+    }
+
+    public String getCedula() {
+        return cedula;
+    }
+
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public ArrayList<Book> getBooks_student() {
+        return books_student;
+    }
+
+    public void setBooks_student(ArrayList<Book> books_student) {
+        this.books_student = books_student;
     }
     
     public void AddBook(Book book){
-        for (int i = 0; i < books_student.length; i++) {
-            if(books_student[i] == null){
-                books_student[i] = book;
-                i = books_student.length;
-            }
-        }
+        this.books_student.add(book);
     }
 
     @Override
     public String toString() {
         String c="";
+        Object[] booksArray = books_student.toArray();
         c+="Cedula"+this.cedula+"\nName: "+this.name+"\nSurname: "
                 +this.surname+"\nBooks: \n[\n";
-        for (int i = 0; i < books_student.length; i++) {
-            if(books_student[i] != null)
-                c+="[\n"+books_student[i].toString()+"\n]\n";
+        for (int i = 0; i < booksArray.length; i++) {
+            if(booksArray[i] != null)
+                c+="[\n"+((Book)booksArray[i]).toString()+"\n]\n";
         }
         c+= "]";
         return c;

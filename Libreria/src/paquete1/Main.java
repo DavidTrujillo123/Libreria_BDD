@@ -39,14 +39,8 @@ public class Main {
         students[1] = st2;
         students[2] = st3;
         
+        Library libreria = new Library();
         
         
-        Library l1 = new Library(books, students);
-        l1.Insert(b10);
-        System.out.println(l1.toString());
-        
-        l1.Delete(b1);
-        System.out.println("-----------------------");
-        System.out.println(l1.toString());
     }
 }
