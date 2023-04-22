@@ -99,7 +99,7 @@ public class Book {
         return "Category: "+this.category+"\nCode: "+this.code+"\nName: "+this.name
                 +"\nAuthor: "+this.author+"\nEditorial: "+this.editorial
                 +"\nMateria: "+this.materia+"\nYear Edition:"+this.year_edition
-                +"\nNumber copies:"+this.ncopy; 
+                +"\nNumber copies:"+this.ncopy+"\n"; 
     }
     
     

@@ -62,14 +62,14 @@ public class Student {
     @Override
     public String toString() {
         String c="";
-        Object[] booksArray = books_student.toArray();
+//        Object[] booksArray = books_student.toArray();
         c+="Cedula"+this.cedula+"\nName: "+this.name+"\nSurname: "
                 +this.surname+"\nBooks: \n[\n";
-        for (int i = 0; i < booksArray.length; i++) {
-            if(booksArray[i] != null)
-                c+="[\n"+((Book)booksArray[i]).toString()+"\n]\n";
+        for (int i = 0; i < books_student.size(); i++) {
+            if(books_student.get(i) != null)
+                c+="[\n"+books_student.get(i).toString()+"\n]\n";
         }
-        c+= "]";
+        c+= "]\n";
         return c;
     }
     

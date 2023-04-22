@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package paquete1;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -32,7 +33,7 @@ public class Library implements IOperatiosLibrary {
         Student st3 = new Student("0034567890", "Pedro", "Ramírez");
         Student st4 = new Student("0045678901", "Ana", "Martínez");
         Student st5 = new Student("0056789012", "Carlos", "Gómez");
-        
+
         Book[] bookList = new Book[10];
         bookList[0] = b1;
         bookList[1] = b2;
@@ -41,80 +42,109 @@ public class Library implements IOperatiosLibrary {
         bookList[4] = b5;
         bookList[5] = b6;
         bookList[6] = b7;
-        
+
         Student[] studentList = new Student[10];
         studentList[0] = st1;
         studentList[1] = st2;
         studentList[2] = st3;
         studentList[3] = st4;
-        
-        
-        
+
         books = new ArrayList<Book>(Arrays.asList(bookList));
         students = new ArrayList<Student>(Arrays.asList(studentList));
-        
+
     }
 
-    public int getIndex(Object[] A,Object obj) {
-        for (int i = 0; i < A.length; i++) {
-            if(A[i].equals(obj))
-                return i;
+    public int getIndexBook(String ID) {
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i) != null) {
+                if ((books.get(i).getCode()).equals(ID)) {
+                    return i;
+                }
+            }
         }
         return -1;
     }
-   
+
+    public int getIndexStudent(String ID) {
+        for (int i = 0; i < students.size(); i++) {
+            if ((students.get(i).getCedula()).equals(ID)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     @Override
     public void Insert(Book obj) {
+        int index = getIndexBook(obj.getCode());
         books.add(obj);
     }
 
     @Override
     public void Delete(String ID) {
-        int index = getIndex(books.toArray(), ID);
-        if(index!=-1){
+        int index = getIndexBook(ID);
+        if (index != -1) {
             books.remove(index);
         }
     }
 
     @Override
     public void ModifyBook(String ID, Book new_book) {
-        int index = getIndex(books.toArray(), ID);
-        if (index != -1){
+        int index = getIndexBook(ID);
+        if (index != -1) {
             books.add(index, new_book);
         }
     }
 
     @Override
     public void ModifyStudent(String ID, String IDreturn_book) {
-        int indexID = getIndex(students.toArray(), ID);
-        int indexIDBook = getIndex(books.toArray(), ID);
-        if(indexID != -1 && indexIDBook != -1){
+        int indexID = getIndexStudent(ID);
+        int indexIDBook = getIndexBook(ID);
+        if (indexID != -1 && indexIDBook != -1) {
             Student st = students.get(indexID);
             ArrayList<Book> studentBooks = st.getBooks_student();
             for (int i = 0; i < studentBooks.size(); i++) {
-                if((studentBooks.get(i).getCode()).equals(IDreturn_book))
+                if ((studentBooks.get(i).getCode()).equals(IDreturn_book)) {
                     studentBooks.remove(i);
+                }
             }
         }
     }
-    
-    private Object Search(ArrayList A ,String ID){
-        int index = getIndex(A.toArray(), ID);
-        if(index!=-1){
-            return A.get(index);
-        }
-        return null;
-    }
+
     @Override
     public Book SearchBook(String ID) {
-        return (Book)Search(books, ID);
+        int index = getIndexBook(ID);
+        if (index != -1) {
+            return books.get(index);
+        }
+        return null;
     }
 
     @Override
     public Student SearchStudent(String ID) {
-        return (Student)Search(students ,ID);
+        int index = getIndexStudent(ID);
+        if (index != -1) {
+            return students.get(index);
+        }
+        return null;
     }
 
-    
+    @Override
+    public String toString() {
+        String c = "";
+        c += "Books: \n";
+        for (Book book : books) {
+            if (book != null) {
+                c += book.toString() + "\n";
+            }
+        }
+        c += "Students: \n\n";
+        for (Student student : students) {
+            if (student != null) {
+                c += student.toString() + "\n";
+            }
+        }
+        return c;
+    }
 
 }

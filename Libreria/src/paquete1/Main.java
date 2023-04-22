@@ -40,7 +40,10 @@ public class Main {
         students[2] = st3;
         
         Library libreria = new Library();
-        
+        libreria.Delete("E12345");
+        libreria.Insert(b9);
+        System.out.println(libreria.toString());
+        System.out.println(libreria.SearchBook("24601"));
         
     }
 }
