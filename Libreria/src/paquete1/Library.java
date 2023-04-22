@@ -54,6 +54,14 @@ public class Library implements IOperatiosLibrary {
 
     }
 
+    public ArrayList<Book> getBooks() {
+        return books;
+    }
+
+    public ArrayList<Student> getStudents() {
+        return students;
+    }
+
     public int getIndexBook(String ID) {
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i) != null) {
@@ -92,6 +100,7 @@ public class Library implements IOperatiosLibrary {
     public void ModifyBook(String ID, Book new_book) {
         int index = getIndexBook(ID);
         if (index != -1) {
+            books.remove(index);
             books.add(index, new_book);
         }
     }

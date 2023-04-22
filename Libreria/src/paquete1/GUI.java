@@ -4,6 +4,12 @@
  */
 package paquete1;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author david
@@ -16,6 +22,30 @@ public class GUI extends javax.swing.JFrame {
     public GUI() {
         initComponents();
         lib = new Library();
+        panelOptiosTableBooks = new MouseAdapter() {
+        // Sobreescribimos el método mouseClicked para detectar el clic del usuario
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            int fila = tableBooks.rowAtPoint(e.getPoint()); // Obtenemos la fila donde se hizo clic
+            int columna = tableBooks.columnAtPoint(e.getPoint()); // Obtenemos la columna donde se hizo clic
+            if (fila > -1 && columna > -1) { // Verificamos que se haya hecho clic dentro de la tabla
+                //Object valor = tableBooks.getValueAt(fila, columna); // Obtenemos el valor de la celda donde se hizo clic
+                if (columna == 8) {
+                    int respuesta = JOptionPane.showConfirmDialog(
+                            null, "¿Está seguro que desea guardar?",
+                            "Confirmación", JOptionPane.YES_NO_OPTION);
+                    if (respuesta == JOptionPane.YES_OPTION) {
+                        Object[] filaSeleccionada = new Object[tableBooks.getColumnCount()];
+                        //Object ID = tableBooks.getValueAt(fila, 0);
+                        for (int i = 0; i < tableBooks.getColumnCount(); i++) {
+                            filaSeleccionada[i] = tableBooks.getValueAt(fila, i);
+                        }
+                        UpdateInfo(filaSeleccionada);
+                    }
+                }
+            }
+        }
+    };
     }
 
     /**
@@ -51,10 +81,20 @@ public class GUI extends javax.swing.JFrame {
         txtAuthor = new javax.swing.JTextField();
         txtCategory = new javax.swing.JTextField();
         txtEditorial = new javax.swing.JTextField();
+        btnAddBook = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblcategoria = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
-        jToolBar1 = new javax.swing.JToolBar();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableBooks = new javax.swing.JTable();
+        btnSearchBooks = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -80,30 +120,65 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        btnAddBook.setText("Añadir");
+        btnAddBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddBookActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Autor");
+
+        jLabel4.setText("Editorial");
+
+        jLabel5.setText("Materia");
+
+        jLabel6.setText("Número de copias");
+
+        lblcategoria.setText("Categoría");
+
+        jLabel7.setText("Año de publicación");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)
                         .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnBuscar))
+                        .addComponent(btnBuscar)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnAddBook))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtName)
-                            .addComponent(txtAuthor)
-                            .addComponent(txtEditorial)
-                            .addComponent(txtMateria)
-                            .addComponent(txtNcopias)
-                            .addComponent(txtCategory)
-                            .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(489, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblcategoria, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtName)
+                                    .addComponent(txtAuthor)
+                                    .addComponent(txtEditorial)
+                                    .addComponent(txtMateria)
+                                    .addComponent(txtNcopias)
+                                    .addComponent(txtCategory)
+                                    .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(580, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,36 +187,76 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(btnAddBook))
                 .addGap(52, 52, 52)
-                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(30, 30, 30)
-                .addComponent(txtAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addGap(44, 44, 44)
-                .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(36, 36, 36)
-                .addComponent(txtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
                 .addGap(35, 35, 35)
-                .addComponent(txtNcopias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNcopias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
                 .addGap(37, 37, 37)
-                .addComponent(txtCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblcategoria))
                 .addGap(38, 38, 38)
-                .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
                 .addContainerGap())
         );
 
-        jTabbedPane2.addTab("Busqueda", jPanel2);
+        jTabbedPane2.addTab("Busqueda/Añdir", jPanel2);
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jRadioButton1.setText("Categoria");
-        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 51, 98, -1));
+        jPanel3.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 98, -1));
 
         jRadioButton2.setText("Nombre");
-        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 51, 98, -1));
+        jPanel3.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 98, -1));
 
-        jToolBar1.setRollover(true);
-        jPanel3.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 80, -1, -1));
+        tableBooks.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre", "Autor", "Categoria", "Editoria", "Año", "Número de copias", "Materia", "Acción"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tableBooks);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1020, 440));
+
+        btnSearchBooks.setText("Buscar");
+        btnSearchBooks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchBooksActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnSearchBooks, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
 
         jTabbedPane2.addTab("Libros", jPanel3);
 
@@ -149,17 +264,11 @@ public class GUI extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(70, 70, 70)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+            .addComponent(jTabbedPane2)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(26, Short.MAX_VALUE)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("tab1", jPanel1);
@@ -181,17 +290,67 @@ public class GUI extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
         Book searchBook = lib.SearchBook(txtID.getText());
-        if(searchBook!=null){
+        if (searchBook != null) {
             txtName.setText(searchBook.getName());
             txtAuthor.setText(searchBook.getAuthor());
             txtCategory.setText(searchBook.getCategory());
             txtEditorial.setText(searchBook.getEditorial());
             txtMateria.setText(searchBook.getMateria());
-            txtNcopias.setText(searchBook.getNcopy()+"");
-            txtYear.setText(searchBook.getYear_edition()+"");
+            txtNcopias.setText(searchBook.getNcopy() + "");
+            txtYear.setText(searchBook.getYear_edition() + "");
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void btnSearchBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchBooksActionPerformed
+        // TODO add your handling code here:
+
+        DefaultTableModel model = (DefaultTableModel) tableBooks.getModel();
+        tableBooks.removeMouseListener(panelOptiosTableBooks);
+//        model.setRowCount(0);
+        int rowCount = model.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        for (Book book : lib.getBooks()) {
+            if (book != null) {
+                Object[] fila = {
+                    book.getCode(), book.getName(), book.getAuthor(), book.getCategory(),
+                    book.getEditorial(), book.getYear_edition(), book.getNcopy(), book.getMateria(), "Guardar"};
+                model.addRow(fila);
+
+            }
+        }
+        tableBooks.addMouseListener(panelOptiosTableBooks);
+    }//GEN-LAST:event_btnSearchBooksActionPerformed
+
+    private void btnAddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBookActionPerformed
+        // TODO add your handling code here:
+        String ID = txtID.getText();
+        String name = txtName.getText();
+        String author = txtAuthor.getText();
+        String category = txtCategory.getText();
+        String editorial = txtEditorial.getText();
+        int year = Integer.parseInt(txtYear.getText());
+        int ncopy = Integer.parseInt(txtNcopias.getText());
+        String materia = txtMateria.getText();
+        Book new_book = new Book(category, ID, name, author, editorial, materia, year, ncopy);
+        lib.Insert(new_book);
+        System.out.println(lib.toString());
+    }//GEN-LAST:event_btnAddBookActionPerformed
+    private void UpdateInfo(Object[] fila) {
+        String ID = fila[0].toString();
+        String name = fila[1].toString();
+        String author = fila[2].toString();
+        String category = fila[3].toString();
+        String editorial = fila[4].toString();
+        int year = Integer.parseInt(fila[5].toString());
+        int ncopy = Integer.parseInt(fila[6].toString());
+        String materia = fila[7].toString();
+        Book b = new Book(category, ID, name, author, editorial, materia, year, ncopy);
+        lib.ModifyBook(ID, b);
+        System.out.println(b);
+
+    }
     /**
      * @param args the command line arguments
      */
@@ -226,12 +385,13 @@ public class GUI extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
     //Mis atributos
     private Library lib;
-    
+    private MouseAdapter panelOptiosTableBooks; 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddBook;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnSearchBooks;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -240,6 +400,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -248,9 +414,11 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JLabel lblcategoria;
+    private javax.swing.JTable tableBooks;
     private javax.swing.JTextField txtAuthor;
     private javax.swing.JTextField txtCategory;
     private javax.swing.JTextField txtEditorial;
