@@ -337,11 +337,13 @@ public class GUI extends javax.swing.JFrame {
             txtNcopias.setText(searchBook.getNcopy() + "");
             txtYear.setText(searchBook.getYear_edition() + "");
 
-            ArrayList<Student> studentByBook = lib.SearchStudentsByBooks("80246");
+            ArrayList<Student> studentByBook = lib.SearchStudentsByBooks(txtID.getText());
             String c = "";
-            for (Student studentBook : studentByBook) {
-                if (studentBook != null) {
-                    c += studentBook.stringData();
+            if (studentByBook != null) {
+                for (Student studentBook : studentByBook) {
+                    if (studentBook != null) {
+                        c += studentBook.stringData();
+                    }
                 }
             }
             txtLibroEstudiante.setText(c);
@@ -363,7 +365,8 @@ public class GUI extends javax.swing.JFrame {
             if (book != null) {
                 Object[] fila = {
                     book.getCode(), book.getName(), book.getAuthor(), book.getCategory(),
-                    book.getEditorial(), book.getYear_edition(), book.getNcopy(), book.getMateria(), "Guardar"};
+                    book.getEditorial(), book.getYear_edition(), book.getNcopy(), book.getMateria(), "Guardar"
+                };
                 model.addRow(fila);
 
             }
@@ -385,23 +388,26 @@ public class GUI extends javax.swing.JFrame {
             Book new_book = new Book(category, ID, name, author, editorial, materia, year, ncopy);
             lib.Insert(new_book);
             JOptionPane.showMessageDialog(null, "Libro añadido correctamente");
-        }
-        else{
+        } else {
             JOptionPane.showMessageDialog(null, "Libro ya existente");
         }
     }//GEN-LAST:event_btnAddBookActionPerformed
     private void UpdateInfo(Object[] fila) {
-        String ID = fila[0].toString();
-        String name = fila[1].toString();
-        String author = fila[2].toString();
-        String category = fila[3].toString();
-        String editorial = fila[4].toString();
-        int year = Integer.parseInt(fila[5].toString());
-        int ncopy = Integer.parseInt(fila[6].toString());
-        String materia = fila[7].toString();
-        Book b = new Book(category, ID, name, author, editorial, materia, year, ncopy);
-        lib.ModifyBook(ID, b);
-        System.out.println(b);
+        try {
+            String ID = fila[0].toString();
+            String name = fila[1].toString();
+            String author = fila[2].toString();
+            String category = fila[3].toString();
+            String editorial = fila[4].toString();
+            int year = Integer.parseInt(fila[5].toString());
+            int ncopy = Integer.parseInt(fila[6].toString());
+            String materia = fila[7].toString();
+
+            Book b = new Book(category, ID, name, author, editorial, materia, year, ncopy);
+            lib.ModifyBook(ID, b);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
     }
     /**

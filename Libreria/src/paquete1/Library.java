@@ -6,6 +6,8 @@ package paquete1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  *
@@ -169,7 +171,7 @@ public class Library implements IOperatiosLibrary {
         
         return ((!res.isEmpty()) ? res : null);
     }
-
+    
     @Override
     public String toString() {
         String c = "";

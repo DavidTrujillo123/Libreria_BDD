@@ -35,7 +35,7 @@ public class Main {
             java.util.logging.Logger.getLogger(GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-//
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -76,11 +76,18 @@ public class Main {
 //        
 //        Library libreria = new Library();
 ////        System.out.println(libreria.toString());
-//        ArrayList<Student> studentBooks = libreria.SearchStudentsByBooks("80246");
+//        ArrayList<Student> studentBooks = libreria.SearchStudentsByBooks("E12345");
 //        for (Student studentBook : studentBooks) {
 //            if(studentBook!=null)
 //                System.out.println(studentBook.stringData());
 //        }
         
+//           ArrayList<Integer> a = new ArrayList<Integer>();
+//           a.add(10);
+//           a.add(20);
+//           a.add(30);
+//           a.add(4);a.add(5);a.add(6);a.add(7);
+//           a.sort(null);
+//           System.out.println(a.toString());
     }
 }
