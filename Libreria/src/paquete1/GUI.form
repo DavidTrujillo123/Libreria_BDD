@@ -388,7 +388,7 @@
                                 <Column editable="true" title="Categoria" type="java.lang.Object"/>
                                 <Column editable="true" title="Editoria" type="java.lang.Object"/>
                                 <Column editable="true" title="A&#xf1;o" type="java.lang.Object"/>
-                                <Column editable="true" title="N&#xfa;mero de copias" type="java.lang.Object"/>
+                                <Column editable="true" title="N&#xfa;mero de copias" type="java.lang.Integer"/>
                                 <Column editable="true" title="Materia" type="java.lang.Object"/>
                                 <Column editable="false" title="Acci&#xf3;n" type="java.lang.Object"/>
                               </Table>
