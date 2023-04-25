@@ -100,6 +100,29 @@ public class GUI extends javax.swing.JFrame {
         tableBooks = new javax.swing.JTable();
         btnSearchBooks = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanel5 = new javax.swing.JPanel();
+        txtCedula = new javax.swing.JTextField();
+        txtNameEst = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        btnBuscarEst = new javax.swing.JButton();
+        txtSurname = new javax.swing.JTextField();
+        btnAddBook1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtEstBooks = new javax.swing.JTextArea();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        txtBookCod = new javax.swing.JTextField();
+        btnReserve = new javax.swing.JButton();
+        btnReturn = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tableBooks1 = new javax.swing.JTable();
+        btnSearchBooks1 = new javax.swing.JButton();
 
         jMenu1.setText("jMenu1");
 
@@ -305,15 +328,115 @@ public class GUI extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Libros", jPanel1);
 
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel5.add(txtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(114, 23, 170, -1));
+        jPanel5.add(txtNameEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 196, -1));
+
+        jLabel9.setText("Cédula");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 26, 50, -1));
+
+        btnBuscarEst.setText("Buscar");
+        btnBuscarEst.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarEstActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnBuscarEst, new org.netbeans.lib.awtextra.AbsoluteConstraints(302, 23, -1, -1));
+        jPanel5.add(txtSurname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 196, -1));
+
+        btnAddBook1.setText("Añadir");
+        btnAddBook1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddBook1ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnAddBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(392, 23, -1, -1));
+
+        jLabel10.setText("Nombre");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 84, 84, -1));
+
+        jLabel11.setText("Apellido");
+        jPanel5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 136, 84, -1));
+
+        txtEstBooks.setColumns(20);
+        txtEstBooks.setRows(5);
+        txtEstBooks.setEnabled(false);
+        jScrollPane3.setViewportView(txtEstBooks);
+
+        jPanel5.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(552, 112, 358, 343));
+
+        jLabel16.setText("Libros reservados");
+        jPanel5.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(659, 84, 148, -1));
+
+        jLabel12.setText("Cod Libro");
+        jPanel5.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 192, 84, -1));
+        jPanel5.add(txtBookCod, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 196, -1));
+
+        btnReserve.setText("Reservar");
+        btnReserve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReserveActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnReserve, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+
+        btnReturn.setText("Devolver");
+        btnReturn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReturnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnReturn, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
+
+        jTabbedPane3.addTab("Busqueda/Añdir", jPanel5);
+
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jRadioButton3.setText("Categoria");
+        jPanel6.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 98, -1));
+
+        jRadioButton4.setText("Nombre");
+        jPanel6.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 98, -1));
+
+        tableBooks1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Nombre", "Autor", "Categoria", "Editoria", "Año", "Número de copias", "Materia", "Acción"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true, true, true, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane4.setViewportView(tableBooks1);
+
+        jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 1020, 440));
+
+        btnSearchBooks1.setText("Buscar");
+        btnSearchBooks1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchBooks1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(btnSearchBooks1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+
+        jTabbedPane3.addTab("Inventario", jPanel6);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1044, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3)
         );
 
         jTabbedPane1.addTab("Estudiante", jPanel4);
@@ -399,6 +522,64 @@ public class GUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Libro ya existente");
         }
     }//GEN-LAST:event_btnAddBookActionPerformed
+
+    private void btnBuscarEstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarEstActionPerformed
+        // TODO add your handling code here:
+        try {
+            estudent = lib.SearchStudent(txtCedula.getText());
+            txtNameEst.setText(estudent.getName());
+            txtSurname.setText(estudent.getSurname());
+            
+            String s = "";
+            for (int i = 0; i < estudent.getBooks_student().size(); i++) {
+                if(estudent.getBooks_student().get(i) != null)
+                    s+="[\n"+estudent.getBooks_student().get(i).toString()+"\n]\n";
+            }   
+            txtEstBooks.setText(s);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Estudiante no encontrado");
+            txtNameEst.setText("");
+            txtSurname.setText("");
+            txtEstBooks.setText("");
+        }
+        
+        
+    }//GEN-LAST:event_btnBuscarEstActionPerformed
+
+    private void btnAddBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddBook1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddBook1ActionPerformed
+
+    private void btnSearchBooks1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchBooks1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSearchBooks1ActionPerformed
+
+    private void btnReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReserveActionPerformed
+        // TODO add your handling code here:
+        try {
+            Book auxBook = lib.SearchBook(txtBookCod.getText());
+            if(lib.Reserve(estudent, auxBook))
+                JOptionPane.showMessageDialog(null, "Libro reservado");
+            else
+                JOptionPane.showMessageDialog(null, "Libro no reservado");
+        } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "ERROR");
+        }
+    }//GEN-LAST:event_btnReserveActionPerformed
+
+    private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
+        // TODO add your handling code here:
+        try {
+            Book b = lib.SearchBook(txtBookCod.getText());
+            if(estudent.ReturnBook(b) == true)
+                JOptionPane.showMessageDialog(null, "Libro devuelto");
+            else
+                JOptionPane.showMessageDialog(null, "ERROR");
+                
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
+    }//GEN-LAST:event_btnReturnActionPerformed
     private void UpdateInfo(Object[] fila) {
         try {
             String ID = fila[0].toString();
@@ -454,10 +635,17 @@ public class GUI extends javax.swing.JFrame {
     //Mis atributos
     private Library lib;
     private MouseAdapter panelOptiosTableBooks;
+    private Student estudent;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddBook;
+    private javax.swing.JButton btnAddBook1;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscarEst;
+    private javax.swing.JButton btnReserve;
+    private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSearchBooks;
+    private javax.swing.JButton btnSearchBooks1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -466,6 +654,10 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -473,29 +665,43 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JLabel lblcategoria;
     private javax.swing.JTable tableBooks;
+    private javax.swing.JTable tableBooks1;
     private javax.swing.JTextField txtAuthor;
+    private javax.swing.JTextField txtBookCod;
     private javax.swing.JTextField txtCategory;
+    private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtEditorial;
+    private javax.swing.JTextArea txtEstBooks;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextArea txtLibroEstudiante;
     private javax.swing.JTextField txtMateria;
     private javax.swing.JTextField txtName;
+    private javax.swing.JTextField txtNameEst;
     private javax.swing.JTextField txtNcopias;
+    private javax.swing.JTextField txtSurname;
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 }

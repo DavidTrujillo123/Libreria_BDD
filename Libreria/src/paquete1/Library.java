@@ -172,6 +172,17 @@ public class Library implements IOperatiosLibrary {
         return ((!res.isEmpty()) ? res : null);
     }
     
+    
+    public boolean Reserve(Student s, Book b){
+        if(b.getNcopy() > 0){
+            s.AddBook(b);
+            b.setNcopy(b.getNcopy()-1);
+            return true;
+        }
+        return false;
+    }
+    
+    
     @Override
     public String toString() {
         String c = "";
