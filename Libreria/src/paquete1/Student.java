@@ -62,6 +62,16 @@ public class Student {
         return  "Cedula: "+this.cedula+"\nName: "+this.name+"\nSurname: "
                 +this.surname+"\n\n";
     }
+    
+    public boolean ReturnBook(Book b){
+        if (books_student.contains(b)){
+            books_student.remove(b);
+            b.setNcopy(b.getNcopy()+1);
+            return true;
+        }
+        return false;
+    }
+    
     @Override
     public String toString() {
         String c="";
