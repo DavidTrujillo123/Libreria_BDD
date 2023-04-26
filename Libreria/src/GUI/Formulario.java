@@ -1419,6 +1419,7 @@ public class Formulario extends javax.swing.JFrame {
         ocultarPaneles();
         panelInventarioBooks.setVisible(true);
         ActualizarTablaLibros();
+        btnLoad.doClick();
     }//GEN-LAST:event_sliderBtnInventarioBookMouseClicked
 
     private void btnBookSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookSearchActionPerformed
@@ -1460,8 +1461,6 @@ public class Formulario extends javax.swing.JFrame {
                 txtBYearSearch.setText("");
                 JOptionPane.showMessageDialog(null, "Libro no encontrado");
             }
-            
-            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "ERROR");
         }
@@ -1938,7 +1937,7 @@ public class Formulario extends javax.swing.JFrame {
                 model.addRow(fila);
             }
         }
-        tableBooks.addMouseListener(panelOptiosTableBooks);
+//        tableBooks.addMouseListener(panelOptiosTableBooks);
     }
     
     private void ActualizarTablaEstudiantes(){
