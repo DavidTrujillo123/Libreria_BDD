@@ -183,6 +183,116 @@ public class Library implements IOperatiosLibrary {
     }
     
     
+    // <editor-fold defaultstate="collapsed" desc="Sorting methods">
+    
+    /**
+     * Sorts the ArrayList of books by a context index:
+     * [1.- Code]
+     * [2.- Name]
+     * [3.- Category]
+     * [4.- Author]
+     * [5.- Materia]
+     * [6.- Editorial]
+     * [7.- Year edition]
+     * [8.- Number of copies]
+     */
+    public void SortBooks(int index)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            switch(index)
+            {
+                case 1 -> SortBookCode(books);
+                case 2 -> SortBookName(books);
+                case 3 -> SortBookAuthor(books);
+                case 4 -> SortBookCategory(books);
+                case 5 -> SorBooktMateria(books);
+                case 6 -> SortBookEditorial(books);
+                case 7 -> SortBookYearEdition(books);
+                case 8 -> SortBookNumberCopies(books);
+            }
+        }
+    }
+    
+    /**
+     * Sorts the ArrayList of students by a context index:
+     * [1.- Cedula]
+     * [2.- Name]
+     * [3.- Surname]
+     */
+    public void SortStudents(int index)
+    {
+        for (int i = 0; i < 10; i++) 
+        {
+            switch(index)
+            {
+                case 1 -> SortCedula(students);
+                case 2 -> SortStudentName(students);
+                case 3 -> SortStudentSurName(students);
+            }
+        }
+    }
+    
+    // <editor-fold defaultstate="collapsed" desc="Book Methods">
+    private void SortBookName(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+    }
+    private void SortBookCategory(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> o1.getCategory().compareTo(o2.getCategory()));
+    }
+    private void SortBookAuthor(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> o1.getAuthor().compareTo(o2.getAuthor()));
+    }
+    private void SorBooktMateria(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> o1.getMateria().compareTo(o2.getMateria()));
+    }
+    private void SortBookCode(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> o1.getCode().compareTo(o2.getCode()));
+    }
+    private void SortBookEditorial(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> o1.getEditorial().compareTo(o2.getEditorial()));
+    }
+    private void SortBookYearEdition(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> CompareToInt(o1.getYear_edition(), o2.getYear_edition()));
+    }
+    private void SortBookNumberCopies(ArrayList<Book> books)
+    {
+        books.sort((o1, o2) -> CompareToInt(o1.getNcopy(), o2.getNcopy()));
+    }
+    
+    public int CompareToInt(int a, int b)
+    {
+        if(a == b) return 0;
+        else if(a > b) return 1;
+        else return -1;
+    }
+    // </editor-fold>
+    
+    // <editor-fold defaultstate="collapsed" desc="Student Methods">
+    public void SortStudentName(ArrayList<Student> lista)
+    {
+        lista.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
+    }
+    public void SortStudentSurName(ArrayList<Student> lista)
+    {
+        lista.sort((o1, o2) -> o1.getSurname().compareTo(o2.getSurname()));
+    }
+    public void SortCedula(ArrayList<Student> lista)
+    {
+        lista.sort((o1, o2) -> o1.getCedula().compareTo(o2.getCedula()));
+    }
+    // </editor-fold>
+    
+    // </editor-fold>
+    
+    
     @Override
     public String toString() {
         String c = "";
