@@ -4,8 +4,10 @@
  */
 package GUI;
 
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import paquete1.*;
 
 /**
@@ -97,7 +99,7 @@ public class Formulario extends javax.swing.JFrame {
         btnSave = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        tableBooks1 = new javax.swing.JTable();
+        tableBooks = new javax.swing.JTable();
         jLabel20 = new javax.swing.JLabel();
         panelAddBooks = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
@@ -142,7 +144,7 @@ public class Formulario extends javax.swing.JFrame {
         cbxStudents = new javax.swing.JComboBox<>();
         jLabel47 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        tableBooks2 = new javax.swing.JTable();
+        tableStudents = new javax.swing.JTable();
         jLabel49 = new javax.swing.JLabel();
         panelBuscarStudents = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
@@ -583,7 +585,12 @@ public class Formulario extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel19.setText("OPCIONES");
 
-        cbxBooks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nombre", "Categoría", "Autor", "Materia", "Código", "Editorial", "Año de edición", "Número de copias" }));
+        cbxBooks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Campos", "Código", "Nombre", "Autor", "Categoría", "Materia", "Editorial", "Año de edición", "Número de copias" }));
+        cbxBooks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxBooksActionPerformed(evt);
+            }
+        });
 
         btnLoad.setBackground(new java.awt.Color(0, 193, 212));
         btnLoad.setText("Cargar");
@@ -642,7 +649,7 @@ public class Formulario extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel18.setText("INVENTARIO ");
 
-        tableBooks1.setModel(new javax.swing.table.DefaultTableModel(
+        tableBooks.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -658,13 +665,13 @@ public class Formulario extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(tableBooks1);
-        if (tableBooks1.getColumnModel().getColumnCount() > 0) {
-            tableBooks1.getColumnModel().getColumn(4).setHeaderValue("Editoria");
-            tableBooks1.getColumnModel().getColumn(5).setHeaderValue("Año");
-            tableBooks1.getColumnModel().getColumn(6).setHeaderValue("Número de copias");
-            tableBooks1.getColumnModel().getColumn(7).setHeaderValue("Materia");
-            tableBooks1.getColumnModel().getColumn(8).setHeaderValue("Acción");
+        jScrollPane4.setViewportView(tableBooks);
+        if (tableBooks.getColumnModel().getColumnCount() > 0) {
+            tableBooks.getColumnModel().getColumn(4).setHeaderValue("Editoria");
+            tableBooks.getColumnModel().getColumn(5).setHeaderValue("Año");
+            tableBooks.getColumnModel().getColumn(6).setHeaderValue("Número de copias");
+            tableBooks.getColumnModel().getColumn(7).setHeaderValue("Materia");
+            tableBooks.getColumnModel().getColumn(8).setHeaderValue("Acción");
         }
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/book_bg2.png"))); // NOI18N
@@ -1038,7 +1045,12 @@ public class Formulario extends javax.swing.JFrame {
         jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel46.setText("OPCIONES");
 
-        cbxStudents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cédula", "Nombre", "Apellido" }));
+        cbxStudents.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tipo", "Cédula", "Nombre", "Apellido", "Libros" }));
+        cbxStudents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxStudentsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelTitle1Layout = new javax.swing.GroupLayout(panelTitle1);
         panelTitle1.setLayout(panelTitle1Layout);
@@ -1064,7 +1076,7 @@ public class Formulario extends javax.swing.JFrame {
         jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel47.setText("Datos estudiantes");
 
-        tableBooks2.setModel(new javax.swing.table.DefaultTableModel(
+        tableStudents.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1080,7 +1092,7 @@ public class Formulario extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane5.setViewportView(tableBooks2);
+        jScrollPane5.setViewportView(tableStudents);
 
         jLabel49.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/book_bg2.png"))); // NOI18N
         jLabel49.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -1406,6 +1418,7 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
         ocultarPaneles();
         panelInventarioBooks.setVisible(true);
+        ActualizarTablaLibros();
     }//GEN-LAST:event_sliderBtnInventarioBookMouseClicked
 
     private void btnBookSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookSearchActionPerformed
@@ -1561,6 +1574,7 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
         ocultarPaneles();
         panelDataStudents.setVisible(true);
+        ActualizarTablaEstudiantes();
     }//GEN-LAST:event_sliderBtnDataStudentMouseClicked
 
     private void btnStudentSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentSearchActionPerformed
@@ -1607,10 +1621,30 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
         // TODO add your handling code here:
+        lib.Deserialize("library.json");
+        
+        DefaultTableModel model = (DefaultTableModel) tableBooks.getModel();
+        tableBooks.removeMouseListener(panelOptiosTableBooks);
+//        model.setRowCount(0);
+        int rowCount = model.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        for (Book book : lib.getBooks()) {
+            if (book != null) {
+                Object[] fila = {
+                    book.getCode(), book.getName(), book.getAuthor(), book.getCategory(),
+                    book.getEditorial(), book.getYear_edition(), book.getNcopy(), book.getMateria(), "Guardar"
+                };
+                model.addRow(fila);
+            }
+        }
+        tableBooks.addMouseListener(panelOptiosTableBooks);
     }//GEN-LAST:event_btnLoadActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        lib.Serialize("library.json");
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarActionPerformed
@@ -1755,6 +1789,29 @@ public class Formulario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtSCedulaCreateKeyTyped
 
+    private void cbxBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxBooksActionPerformed
+        // TODO add your handling code here:
+        tableBooks.removeAll();
+        try
+        {
+            lib.SortBooks(cbxBooks.getSelectedIndex());
+        }
+        catch(Exception e){}
+        
+        ActualizarTablaLibros();
+    }//GEN-LAST:event_cbxBooksActionPerformed
+
+    private void cbxStudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxStudentsActionPerformed
+        // TODO add your handling code here:
+        try
+        {
+            lib.SortStudents(cbxStudents.getSelectedIndex());
+        }
+        catch(Exception e){}
+        
+        ActualizarTablaEstudiantes();
+    }//GEN-LAST:event_cbxStudentsActionPerformed
+
     public boolean StudentInfoCheck(String ced, String name, String surname){
         System.out.println("");
         try {
@@ -1857,6 +1914,59 @@ public class Formulario extends javax.swing.JFrame {
         return cedulaCorrecta;
     }
     
+    private void ActualizarTablaLibros(){
+        tableBooks.removeAll();
+        try
+        {
+            lib.SortBooks(cbxBooks.getSelectedIndex());
+        }
+        catch(Exception e){}
+        
+        DefaultTableModel model = (DefaultTableModel) tableBooks.getModel();
+        tableBooks.removeMouseListener(panelOptiosTableBooks);
+//        model.setRowCount(0);
+        int rowCount = model.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        for (Book book : lib.getBooks()) {
+            if (book != null) {
+                Object[] fila = {
+                    book.getCode(), book.getName(), book.getAuthor(), book.getCategory(),
+                    book.getEditorial(), book.getYear_edition(), book.getNcopy(), book.getMateria(), "Guardar"
+                };
+                model.addRow(fila);
+            }
+        }
+        tableBooks.addMouseListener(panelOptiosTableBooks);
+    }
+    
+    private void ActualizarTablaEstudiantes(){
+        tableBooks.removeAll();
+        try
+        {
+            lib.SortBooks(cbxBooks.getSelectedIndex());
+        }
+        catch(Exception e){}
+        
+        DefaultTableModel model = (DefaultTableModel) tableStudents.getModel();
+        tableStudents.removeMouseListener(panelOptiosTableBooks);
+//        model.setRowCount(0);
+        int rowCount = model.getRowCount();
+        for (int i = rowCount - 1; i >= 0; i--) {
+            model.removeRow(i);
+        }
+        for (Student student : lib.getStudents()) {
+            if (student != null) {
+                Object[] fila = {
+                    student.getCedula(), student.getName(), student.getSurname(), student.getBooks_student().size()
+                };
+                model.addRow(fila);
+            }
+        }
+        tableBooks.addMouseListener(panelOptiosTableBooks);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1898,7 +2008,7 @@ public class Formulario extends javax.swing.JFrame {
 //    private Student student;
 //    private Book b;
     private Library lib;
-    
+    private MouseAdapter panelOptiosTableBooks;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBookCreate;
@@ -2007,8 +2117,8 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JPanel sliderBtnBuscarStudents;
     private javax.swing.JPanel sliderBtnDataStudent;
     private javax.swing.JPanel sliderBtnInventarioBook;
-    private javax.swing.JTable tableBooks1;
-    private javax.swing.JTable tableBooks2;
+    private javax.swing.JTable tableBooks;
+    private javax.swing.JTable tableStudents;
     private javax.swing.JTextArea txaLibroEstudiante;
     private javax.swing.JTextArea txaStudent;
     private javax.swing.JTextField txtBAuthorCreate;
