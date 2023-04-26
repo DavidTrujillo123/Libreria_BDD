@@ -1269,7 +1269,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/research.png"))); // NOI18N
+        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lupa.png"))); // NOI18N
 
         javax.swing.GroupLayout panelReservaLayout = new javax.swing.GroupLayout(panelReserva);
         panelReserva.setLayout(panelReservaLayout);
