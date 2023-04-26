@@ -4,6 +4,10 @@
  */
 package GUI;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import paquete1.*;
+
 /**
  *
  * @author david
@@ -14,6 +18,7 @@ public class Formulario extends javax.swing.JFrame {
      * Creates new form Formulario
      */
     public Formulario() {
+        lib = new Library();
         initComponents();
         
         ocultarPaneles();
@@ -66,21 +71,21 @@ public class Formulario extends javax.swing.JFrame {
         btnBookSearch = new javax.swing.JButton();
         btnBookUpdate = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
-        txtBAuthor = new javax.swing.JTextField();
-        txtBEditorial = new javax.swing.JTextField();
-        txtBYear = new javax.swing.JTextField();
+        txtBAuthorSearch = new javax.swing.JTextField();
+        txtBEditorialSearch = new javax.swing.JTextField();
+        txtBYearSearch = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        txtBName = new javax.swing.JTextField();
+        txtBNameSearch = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        txtBMateria = new javax.swing.JTextField();
+        txtBMateriaSearch = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         lblcategoria = new javax.swing.JLabel();
         jLabel28 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        txtBNcopias = new javax.swing.JTextField();
-        txtBCategory = new javax.swing.JTextField();
+        txtBNcopiasSearch = new javax.swing.JTextField();
+        txtBCategorySearch = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         txaLibroEstudiante = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
@@ -105,7 +110,7 @@ public class Formulario extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        txtBIDCreate = new javax.swing.JTextField();
+        txtBCodCreate = new javax.swing.JTextField();
         txtBNameCreate = new javax.swing.JTextField();
         txtBEditorialCreate = new javax.swing.JTextField();
         jPanel13 = new javax.swing.JPanel();
@@ -115,7 +120,7 @@ public class Formulario extends javax.swing.JFrame {
         jLabel40 = new javax.swing.JLabel();
         jLabel41 = new javax.swing.JLabel();
         txtBMateriaCreate = new javax.swing.JTextField();
-        txtBNumCCreate = new javax.swing.JTextField();
+        txtBNCopyCreate = new javax.swing.JTextField();
         txtBYearCreate = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         panelAddStudent = new javax.swing.JPanel();
@@ -175,7 +180,7 @@ public class Formulario extends javax.swing.JFrame {
         btnStudentSearch = new javax.swing.JButton();
         btnStudentUpdate = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
-        txtBSurnameSearch = new javax.swing.JTextField();
+        txtSSurnameSearch = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
         txtSNameSearch = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
@@ -485,13 +490,13 @@ public class Formulario extends javax.swing.JFrame {
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtBName)
-                            .addComponent(txtBAuthor)
-                            .addComponent(txtBEditorial)
-                            .addComponent(txtBMateria)
-                            .addComponent(txtBNcopias)
-                            .addComponent(txtBCategory)
-                            .addComponent(txtBYear, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtBNameSearch)
+                            .addComponent(txtBAuthorSearch)
+                            .addComponent(txtBEditorialSearch)
+                            .addComponent(txtBMateriaSearch)
+                            .addComponent(txtBNcopiasSearch)
+                            .addComponent(txtBCategorySearch)
+                            .addComponent(txtBYearSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -510,31 +515,31 @@ public class Formulario extends javax.swing.JFrame {
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel23))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBAuthorSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel24))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBEditorialSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel25))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBMateria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBMateriaSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel26))
                         .addGap(29, 29, 29)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBNcopias, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBNcopiasSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel27))
                         .addGap(31, 31, 31)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBCategorySearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblcategoria))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtBYearSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel28))))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
@@ -764,7 +769,7 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtBIDCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBCodCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBAuthorCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBNameCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBEditorialCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -776,7 +781,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(txtBIDCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBCodCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel38)
@@ -832,7 +837,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtBMateriaCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBCategoryCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtBNumCCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBNCopyCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtBYearCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44))
         );
@@ -846,7 +851,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel41)
-                    .addComponent(txtBNumCCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtBNCopyCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
@@ -1264,7 +1269,7 @@ public class Formulario extends javax.swing.JFrame {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/research_2.png"))); // NOI18N
+        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/research.png"))); // NOI18N
 
         javax.swing.GroupLayout panelReservaLayout = new javax.swing.GroupLayout(panelReserva);
         panelReserva.setLayout(panelReservaLayout);
@@ -1474,7 +1479,7 @@ public class Formulario extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtSNameSearch)
-                            .addComponent(txtBSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtSSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(66, 66, 66)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(117, 117, 117))
@@ -1498,7 +1503,7 @@ public class Formulario extends javax.swing.JFrame {
                             .addComponent(jLabel68))
                         .addGap(30, 30, 30)
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel65))))
                 .addContainerGap(103, Short.MAX_VALUE))
         );
@@ -1530,8 +1535,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel60)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jLabel69)
+                .addGap(174, 174, 174))
         );
         panelBuscarStudentsLayout.setVerticalGroup(
             panelBuscarStudentsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1580,7 +1585,46 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnBookSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookSearchActionPerformed
         // TODO add your handling code here:
-        
+        try {
+            String bkcod;
+            bkcod = txtBCodSearch.getText();
+            b = lib.SearchBook(bkcod);
+            if(b != null){
+                txtBNameSearch.setText(b.getName());
+                txtBAuthorSearch.setText(b.getAuthor());
+                txtBEditorialSearch.setText(b.getEditorial());
+                txtBMateriaSearch.setText(b.getMateria());
+                txtBNcopiasSearch.setText(b.getNcopy()+"");
+                txtBCategorySearch.setText(b.getCategory());
+                txtBYearSearch.setText(b.getYear_edition()+"");
+                
+                ArrayList<Student> studentByBook = lib.SearchStudentsByBooks(txtBCodSearch.getText());
+                String c = "";
+                if (studentByBook != null) {
+                    for (Student studentBook : studentByBook) {
+                        if (studentBook != null) {
+                            c += studentBook.stringData();
+                        }
+                    }
+                }
+                
+                txaLibroEstudiante.setText(c);
+            }
+            else{
+                txtBNameSearch.setText("");
+                txtBAuthorSearch.setText("");
+                txtBEditorialSearch.setText("");
+                txtBMateriaSearch.setText("");
+                txtBNcopiasSearch.setText("");
+                txtBCategorySearch.setText("");
+                txtBYearSearch.setText("");
+                JOptionPane.showMessageDialog(null, "Libro no encontrado");
+            }
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
         
         
     }//GEN-LAST:event_btnBookSearchActionPerformed
@@ -1593,10 +1637,67 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnBookUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookUpdateActionPerformed
         // TODO add your handling code here:
+        try {
+            String name, aut, edit, mat,cat;
+            int ncop, year;
+            if(b != null){
+                name = txtBNameSearch.getText();
+                aut = txtBAuthorSearch.getText();
+                edit = txtBEditorialSearch.getText();
+                mat = txtBMateriaSearch.getText();
+                ncop = Integer.parseInt(txtBNcopiasSearch.getText());
+                cat = txtBCategorySearch.getText();
+                year = Integer.parseInt(txtBYearSearch.getText());
+                
+                b.setName(name);
+                b.setAuthor(aut);
+                b.setEditorial(edit);
+                b.setMateria(mat);
+                b.setNcopy(ncop);
+                b.setCategory(cat);
+                b.setYear_edition(year);
+                JOptionPane.showMessageDialog(null, "Libro Actualizado");
+            }
+            else JOptionPane.showMessageDialog(null, "No se encontró libro");
+            
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
     }//GEN-LAST:event_btnBookUpdateActionPerformed
 
     private void btnBookCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookCreateActionPerformed
         // TODO add your handling code here:
+        try {
+            boolean datos;
+            String cod,  nombre,  autor, cat, editorial,  materia,  ncopy,  year;
+            cod = txtBCodCreate.getText();
+            nombre = txtBNameCreate.getText();
+            autor = txtBAuthorCreate.getText();
+            cat = txtBCategoryCreate.getText();
+            editorial = txtBEditorialCreate.getText();
+            materia = txtBMateriaCreate.getText();
+            ncopy = txtBNCopyCreate.getText();
+            year = txtBYearCreate.getText();
+
+            datos = BookCreateCheck(cod, nombre, autor, cat, editorial, materia, ncopy, year);
+
+            
+            
+            if(datos && lib.getIndexBook(cod) == -1){
+                int n1,n2;
+                n1 = Integer.parseInt(ncopy);
+                n2 = Integer.parseInt(year);
+                b = new Book(materia, cod, cat, autor, editorial, materia, n1,n2);
+                lib.getBooks().add(b);
+                JOptionPane.showMessageDialog(null, "Libro Creado!");
+
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Libro no creado");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error");
+        }
     }//GEN-LAST:event_btnBookCreateActionPerformed
 
     private void sliderBtnAddBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnAddBookMouseClicked
@@ -1607,6 +1708,22 @@ public class Formulario extends javax.swing.JFrame {
     
     private void btnStudenCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudenCreateActionPerformed
         // TODO add your handling code here:
+        String ced,name,surname;
+        try {
+            ced = txtSCedulaCreate.getText();
+            name = txtSNameCreate.getText();
+            surname = txtSSurnameCreate.getText();
+            
+            if(StudentInfoCheck(ced, name, surname)){
+                student = new Student(ced, name, surname);
+                lib.getStudents().add(student);
+                JOptionPane.showMessageDialog(null, "Estudiante agregado");
+            }
+            else JOptionPane.showMessageDialog(null, "Datos Erroneos");
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "ERROR");
+        }
     }//GEN-LAST:event_btnStudenCreateActionPerformed
 
     private void sliderBtnAddStudentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnAddStudentsMouseClicked
@@ -1657,6 +1774,85 @@ public class Formulario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSaveActionPerformed
 
+    public boolean StudentInfoCheck(String ced, String name, String surname){
+        System.out.println("");
+        try {
+            if(ced.length() > 0 && name.length() > 0 && surname.length() > 0){
+                if(validadorDeCedula(ced) && lib.getIndexStudent(ced) == -1)
+                    return true;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
+        return false;
+    }
+    
+    private boolean BookCreateCheck(String cod, String nombre, String autor, 
+            String cat,String editorial, String materia, String ncopy, String year){
+        
+        int ncopy2, year2;
+        ncopy2 = Integer.parseInt(ncopy);
+        year2 = Integer.parseInt(year);
+        
+        if(cod.equals("")||nombre.equals("")||
+                autor.equals("")||editorial.equals("")||
+                materia.equals("")|| cat.equals("") ||ncopy2 < 0||
+                year2 < 0){
+        
+            return false;
+        }
+        return true;
+        
+    }
+    
+    public boolean validadorDeCedula(String cedula) {
+        boolean cedulaCorrecta = false;
+
+        try {
+
+            if (cedula.length() == 10) // ConstantesApp.LongitudCedula
+            {
+                int tercerDigito = Integer.parseInt(cedula.substring(2, 3));
+                if (tercerDigito < 6) {
+                    // Coeficientes de validación cédula
+                    // El decimo digito se lo considera dígito verificador
+                    int[] coefValCedula = {2, 1, 2, 1, 2, 1, 2, 1, 2};
+                    int verificador = Integer.parseInt(cedula.substring(9, 10));
+                    int suma = 0;
+                    int digito = 0;
+                    for (int i = 0; i < (cedula.length() - 1); i++) {
+                        digito = Integer.parseInt(cedula.substring(i, i + 1)) * coefValCedula[i];
+                        suma += ((digito % 10) + (digito / 10));
+                    }
+
+                    if ((suma % 10 == 0) && (suma % 10 == verificador)) {
+                        cedulaCorrecta = true;
+                    } else if ((10 - (suma % 10)) == verificador) {
+                        cedulaCorrecta = true;
+                    } else {
+                        cedulaCorrecta = false;
+                    }
+                } else {
+                    cedulaCorrecta = false;
+                }
+            } else {
+                cedulaCorrecta = false;
+            }
+        } catch (NumberFormatException nfe) {
+            cedulaCorrecta = false;
+        } catch (Exception err) {
+            System.out.println("Una excepcion ocurrio en el proceso de validadcion");
+            cedulaCorrecta = false;
+        }
+
+        if (!cedulaCorrecta) {
+            System.out.println("La Cédula ingresada es Incorrecta");
+        }
+        System.out.println("CORRECTA"+cedulaCorrecta);
+        return cedulaCorrecta;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -1691,6 +1887,14 @@ public class Formulario extends javax.swing.JFrame {
 //            }
 //        });
     //}
+    
+    
+    
+    //Mis Atributos
+    private Student student;
+    private Book b;
+    private Library lib;
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBookCreate;
@@ -1819,27 +2023,26 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JTable tableBooks2;
     private javax.swing.JTextArea txaLibroEstudiante;
     private javax.swing.JTextArea txaStudent;
-    private javax.swing.JTextField txtBAuthor;
     private javax.swing.JTextField txtBAuthorCreate;
     private javax.swing.JTextField txtBAuthorReserve;
-    private javax.swing.JTextField txtBCategory;
+    private javax.swing.JTextField txtBAuthorSearch;
     private javax.swing.JTextField txtBCategoryCreate;
+    private javax.swing.JTextField txtBCategorySearch;
+    private javax.swing.JTextField txtBCodCreate;
     private javax.swing.JTextField txtBCodReserve;
     private javax.swing.JTextField txtBCodSearch;
-    private javax.swing.JTextField txtBEditorial;
     private javax.swing.JTextField txtBEditorialCreate;
-    private javax.swing.JTextField txtBIDCreate;
-    private javax.swing.JTextField txtBMateria;
+    private javax.swing.JTextField txtBEditorialSearch;
     private javax.swing.JTextField txtBMateriaCreate;
-    private javax.swing.JTextField txtBName;
+    private javax.swing.JTextField txtBMateriaSearch;
+    private javax.swing.JTextField txtBNCopyCreate;
     private javax.swing.JTextField txtBNameCreate;
-    private javax.swing.JTextField txtBNcopias;
-    private javax.swing.JTextField txtBNumCCreate;
+    private javax.swing.JTextField txtBNameSearch;
+    private javax.swing.JTextField txtBNcopiasSearch;
     private javax.swing.JTextField txtBNumReserve;
-    private javax.swing.JTextField txtBSurnameSearch;
     private javax.swing.JTextField txtBTitleReserve;
-    private javax.swing.JTextField txtBYear;
     private javax.swing.JTextField txtBYearCreate;
+    private javax.swing.JTextField txtBYearSearch;
     private javax.swing.JTextField txtSCedReserve;
     private javax.swing.JTextField txtSCedSearch;
     private javax.swing.JTextField txtSCedulaCreate;
@@ -1848,5 +2051,6 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JTextField txtSNameSearch;
     private javax.swing.JTextField txtSSurnameCreate;
     private javax.swing.JTextField txtSSurnameReserve;
+    private javax.swing.JTextField txtSSurnameSearch;
     // End of variables declaration//GEN-END:variables
 }

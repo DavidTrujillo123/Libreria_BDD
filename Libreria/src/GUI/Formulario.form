@@ -715,13 +715,13 @@
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="txtBName" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBAuthor" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBEditorial" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBMateria" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBNcopias" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBCategory" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBYear" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                                          <Component id="txtBNameSearch" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBAuthorSearch" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBEditorialSearch" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBMateriaSearch" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBNcopiasSearch" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBCategorySearch" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtBYearSearch" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -747,37 +747,37 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBName" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBNameSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBAuthor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBAuthorSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBEditorial" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBEditorialSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBMateria" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBMateriaSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBNcopias" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBNcopiasSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBCategory" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBCategorySearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="lblcategoria" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBYear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtBYearSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -788,11 +788,11 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="txtBAuthor">
+                    <Component class="javax.swing.JTextField" name="txtBAuthorSearch">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtBEditorial">
+                    <Component class="javax.swing.JTextField" name="txtBEditorialSearch">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtBYear">
+                    <Component class="javax.swing.JTextField" name="txtBYearSearch">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel25">
                       <Properties>
@@ -827,7 +827,7 @@
                         <Property name="text" type="java.lang.String" value="Estudiantes con el libro"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtBName">
+                    <Component class="javax.swing.JTextField" name="txtBNameSearch">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel24">
                       <Properties>
@@ -840,7 +840,7 @@
                         <Property name="text" type="java.lang.String" value="Autor"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtBMateria">
+                    <Component class="javax.swing.JTextField" name="txtBMateriaSearch">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel27">
                       <Properties>
@@ -889,9 +889,9 @@
                         <Property name="text" type="java.lang.String" value="Titulo"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtBNcopias">
+                    <Component class="javax.swing.JTextField" name="txtBNcopiasSearch">
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtBCategory">
+                    <Component class="javax.swing.JTextField" name="txtBCategorySearch">
                     </Component>
                     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
                       <AuxValues>
@@ -1313,7 +1313,7 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="txtBIDCreate" min="-2" pref="254" max="-2" attributes="0"/>
+                                      <Component id="txtBCodCreate" min="-2" pref="254" max="-2" attributes="0"/>
                                       <Component id="txtBAuthorCreate" min="-2" pref="254" max="-2" attributes="0"/>
                                       <Component id="txtBNameCreate" min="-2" pref="254" max="-2" attributes="0"/>
                                       <Component id="txtBEditorialCreate" min="-2" pref="254" max="-2" attributes="0"/>
@@ -1328,7 +1328,7 @@
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtBIDCreate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtBCodCreate" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1400,7 +1400,7 @@
                             <Property name="text" type="java.lang.String" value="Nombre"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtBIDCreate">
+                        <Component class="javax.swing.JTextField" name="txtBCodCreate">
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtBNameCreate">
                         </Component>
@@ -1442,7 +1442,7 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="txtBMateriaCreate" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
                                       <Component id="txtBCategoryCreate" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
-                                      <Component id="txtBNumCCreate" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
+                                      <Component id="txtBNCopyCreate" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
                                       <Component id="txtBYearCreate" alignment="0" min="-2" pref="254" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
@@ -1460,7 +1460,7 @@
                                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel41" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtBNumCCreate" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtBNCopyCreate" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -1529,7 +1529,7 @@
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtBMateriaCreate">
                         </Component>
-                        <Component class="javax.swing.JTextField" name="txtBNumCCreate">
+                        <Component class="javax.swing.JTextField" name="txtBNCopyCreate">
                         </Component>
                         <Component class="javax.swing.JTextField" name="txtBYearCreate">
                         </Component>
@@ -2255,7 +2255,7 @@
             <Component class="javax.swing.JLabel" name="jLabel52">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/research_2.png"/>
+                  <Image iconType="3" name="/images/research.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -2456,8 +2456,8 @@
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jLabel69" min="-2" pref="668" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2623,7 +2623,7 @@
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="txtSNameSearch" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtBSurnameSearch" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                                          <Component id="txtSSurnameSearch" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                       <Component id="jScrollPane3" min="-2" pref="390" max="-2" attributes="0"/>
@@ -2655,7 +2655,7 @@
                                       </Group>
                                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtBSurnameSearch" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtSSurnameSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2666,7 +2666,7 @@
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JTextField" name="txtBSurnameSearch">
+                    <Component class="javax.swing.JTextField" name="txtSSurnameSearch">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel64">
                       <Properties>

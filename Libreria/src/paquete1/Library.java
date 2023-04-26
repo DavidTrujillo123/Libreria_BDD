@@ -81,7 +81,7 @@ public class Library implements IOperatiosLibrary {
 
     public int getIndexStudent(String ID) {
         for (int i = 0; i < students.size(); i++) {
-            if ((students.get(i).getCedula()).equals(ID)) {
+            if ( students.get(i)!= null && (students.get(i).getCedula()).equals(ID)) {
                 return i;
             }
         }
