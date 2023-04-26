@@ -1734,6 +1734,23 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnSearchReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchReserveActionPerformed
         // TODO add your handling code here:
+        String ced, cod;
+        
+        ced = txtSCedReserve.getText();
+        cod = txtBCodReserve.getText();
+        b = lib.SearchBook(cod);
+        student = lib.SearchStudent(ced);
+        
+        if(b != null && student != null){
+            txtSNameReserve.setText(student.getName());
+            txtSSurnameReserve.setText(student.getSurname());
+            txtBTitleReserve.setText(b.getName());
+            txtBAuthorReserve.setText(b.getAuthor());
+            txtBNumReserve.setText(b.getName());
+
+        }
+        
+        
     }//GEN-LAST:event_btnSearchReserveActionPerformed
 
     private void btnReserveBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReserveBookActionPerformed
