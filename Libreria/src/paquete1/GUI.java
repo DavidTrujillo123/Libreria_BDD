@@ -558,7 +558,7 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Book auxBook = lib.SearchBook(txtBookCod.getText());
-            if(lib.Reserve(estudent, auxBook))
+            if(lib.ReserveBook(estudent, auxBook))
                 JOptionPane.showMessageDialog(null, "Libro reservado");
             else
                 JOptionPane.showMessageDialog(null, "Libro no reservado");
@@ -592,7 +592,6 @@ public class GUI extends javax.swing.JFrame {
             String materia = fila[7].toString();
 
             Book b = new Book(category, ID, name, author, editorial, materia, year, ncopy);
-            lib.ModifyBook(ID, b);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -18,10 +18,12 @@ public class Formulario extends javax.swing.JFrame {
      * Creates new form Formulario
      */
     public Formulario() {
-        lib = new Library();
         initComponents();
         
         ocultarPaneles();
+        lib = new Library();
+        btnDeleteBook.setEnabled(false);
+        btnDeleteStudent.setEnabled(false);
     }
 
     /**
@@ -44,9 +46,6 @@ public class Formulario extends javax.swing.JFrame {
         sliderBtnBuscarBook = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        sliderBtnReserva = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         sliderBtnAddBook = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -88,6 +87,7 @@ public class Formulario extends javax.swing.JFrame {
         txtBCategorySearch = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         txaLibroEstudiante = new javax.swing.JTextArea();
+        btnDeleteBook = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         panelInventarioBooks = new javax.swing.JPanel();
         panelTitle = new javax.swing.JPanel();
@@ -136,33 +136,6 @@ public class Formulario extends javax.swing.JFrame {
         txtSCedulaCreate = new javax.swing.JTextField();
         txtSNameCreate = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        panelReserva = new javax.swing.JPanel();
-        jLabel36 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel44 = new javax.swing.JLabel();
-        txtBCodReserve = new javax.swing.JTextField();
-        jLabel53 = new javax.swing.JLabel();
-        txtSCedReserve = new javax.swing.JTextField();
-        btnSearchReserve = new javax.swing.JButton();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        txtSNameReserve = new javax.swing.JTextField();
-        txtSSurnameReserve = new javax.swing.JTextField();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel51 = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel54 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
-        txtBTitleReserve = new javax.swing.JTextField();
-        txtBAuthorReserve = new javax.swing.JTextField();
-        jLabel55 = new javax.swing.JLabel();
-        txtBNumReserve = new javax.swing.JTextField();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
-        btnReturnBook = new javax.swing.JButton();
-        btnReserveBook = new javax.swing.JButton();
-        jLabel52 = new javax.swing.JLabel();
         panelDataStudents = new javax.swing.JPanel();
         panelTitle1 = new javax.swing.JPanel();
         jLabel46 = new javax.swing.JLabel();
@@ -180,13 +153,20 @@ public class Formulario extends javax.swing.JFrame {
         btnStudentSearch = new javax.swing.JButton();
         btnStudentUpdate = new javax.swing.JButton();
         jPanel20 = new javax.swing.JPanel();
-        txtSSurnameSearch = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
-        txtSNameSearch = new javax.swing.JTextField();
-        jLabel65 = new javax.swing.JLabel();
-        jLabel68 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         txaStudent = new javax.swing.JTextArea();
+        jPanel21 = new javax.swing.JPanel();
+        jLabel67 = new javax.swing.JLabel();
+        txtBCodR = new javax.swing.JTextField();
+        btnReservar = new javax.swing.JButton();
+        btnDevolver = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        txtSNameSearch = new javax.swing.JTextField();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        txtSSurnameSearch = new javax.swing.JTextField();
+        btnDeleteStudent = new javax.swing.JButton();
         jLabel69 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -250,27 +230,6 @@ public class Formulario extends javax.swing.JFrame {
 
         panelSlider.add(sliderBtnBuscarBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 260, 40));
 
-        sliderBtnReserva.setBackground(new java.awt.Color(85, 65, 118));
-        sliderBtnReserva.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        sliderBtnReserva.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                sliderBtnReservaMouseClicked(evt);
-            }
-        });
-        sliderBtnReserva.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/libro.png"))); // NOI18N
-        sliderBtnReserva.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 40));
-
-        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 18)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Reservar/ Devolver");
-        sliderBtnReserva.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 170, 40));
-
-        panelSlider.add(sliderBtnReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 260, 40));
-
         sliderBtnAddBook.setBackground(new java.awt.Color(85, 65, 118));
         sliderBtnAddBook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sliderBtnAddBook.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -332,7 +291,7 @@ public class Formulario extends javax.swing.JFrame {
         jLabel6.setText("Buscar");
         sliderBtnBuscarStudents.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 150, 40));
 
-        panelSlider.add(sliderBtnBuscarStudents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 260, 40));
+        panelSlider.add(sliderBtnBuscarStudents, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 260, 40));
 
         sliderBtnInventarioBook.setBackground(new java.awt.Color(85, 65, 118));
         sliderBtnInventarioBook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -433,6 +392,12 @@ public class Formulario extends javax.swing.JFrame {
 
         jPanel9.setBackground(new java.awt.Color(122, 72, 221));
 
+        txtBYearSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBYearSearchKeyTyped(evt);
+            }
+        });
+
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(246, 246, 246));
         jLabel25.setText("Editorial");
@@ -466,10 +431,26 @@ public class Formulario extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(246, 246, 246));
         jLabel23.setText("Titulo");
 
+        txtBNcopiasSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBNcopiasSearchKeyTyped(evt);
+            }
+        });
+
         txaLibroEstudiante.setColumns(20);
         txaLibroEstudiante.setRows(5);
         txaLibroEstudiante.setEnabled(false);
         jScrollPane2.setViewportView(txaLibroEstudiante);
+
+        btnDeleteBook.setBackground(new java.awt.Color(0, 193, 212));
+        btnDeleteBook.setText("Borrar");
+        btnDeleteBook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDeleteBook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeleteBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteBookActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -478,7 +459,13 @@ public class Formulario extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(128, 128, 128))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -496,19 +483,18 @@ public class Formulario extends javax.swing.JFrame {
                             .addComponent(txtBMateriaSearch)
                             .addComponent(txtBNcopiasSearch)
                             .addComponent(txtBCategorySearch)
-                            .addComponent(txtBYearSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(128, 128, 128))
+                            .addComponent(txtBYearSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnDeleteBook, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
+                        .addContainerGap()
+                        .addComponent(btnDeleteBook, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)
                         .addComponent(jLabel29)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -756,6 +742,12 @@ public class Formulario extends javax.swing.JFrame {
         jLabel38.setForeground(new java.awt.Color(246, 246, 246));
         jLabel38.setText("Nombre");
 
+        txtBCodCreate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBCodCreateKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
@@ -817,6 +809,18 @@ public class Formulario extends javax.swing.JFrame {
         jLabel41.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(246, 246, 246));
         jLabel41.setText("Número de copias");
+
+        txtBNCopyCreate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBNCopyCreateKeyTyped(evt);
+            }
+        });
+
+        txtBYearCreate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtBYearCreateKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -942,6 +946,12 @@ public class Formulario extends javax.swing.JFrame {
         jLabel43.setForeground(new java.awt.Color(246, 246, 246));
         jLabel43.setText("Nombre");
 
+        txtSCedulaCreate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSCedulaCreateKeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -1020,284 +1030,6 @@ public class Formulario extends javax.swing.JFrame {
         );
 
         panelBackground.add(panelAddStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 1020, 640));
-
-        panelReserva.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel36.setText("Reservar - Devolver");
-
-        jPanel3.setBackground(new java.awt.Color(255, 111, 111));
-
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel44.setText("Codigo");
-
-        jLabel53.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("Cedula");
-
-        btnSearchReserve.setBackground(new java.awt.Color(0, 193, 212));
-        btnSearchReserve.setText("Buscar");
-        btnSearchReserve.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSearchReserve.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSearchReserve.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSearchReserveActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel53, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(txtSCedReserve, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(txtBCodReserve, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSearchReserve, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtBCodReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel44))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtSCedReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel53)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(btnSearchReserve, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel17.setBackground(new java.awt.Color(122, 72, 221));
-
-        jPanel7.setBackground(new java.awt.Color(60, 72, 107));
-
-        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel48.setText("Apellido");
-
-        jLabel51.setBackground(new java.awt.Color(246, 246, 246));
-        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel51.setText("Nombre");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel48, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtSNameReserve)
-                    .addComponent(txtSSurnameReserve, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSNameReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel51))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSSurnameReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel48))
-                .addContainerGap())
-        );
-
-        jPanel18.setBackground(new java.awt.Color(60, 72, 107));
-
-        jLabel54.setBackground(new java.awt.Color(246, 246, 246));
-        jLabel54.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel54.setText("Titulo");
-
-        jLabel56.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel56.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel56.setText("Número de copias");
-
-        jLabel55.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel55.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel55.setText("Autor");
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel54, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtBAuthorReserve)
-                    .addComponent(txtBTitleReserve, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                    .addComponent(txtBNumReserve))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBTitleReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel54))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBAuthorReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel55))
-                .addGap(26, 26, 26)
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBNumReserve, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel56))
-                .addContainerGap())
-        );
-
-        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel57.setText("Libro");
-
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel58.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel58.setText("Estudiante");
-
-        btnReturnBook.setBackground(new java.awt.Color(0, 193, 212));
-        btnReturnBook.setText("Devolver");
-        btnReturnBook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnReturnBook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnReserveBook.setBackground(new java.awt.Color(0, 193, 212));
-        btnReserveBook.setText("Reservar");
-        btnReserveBook.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnReserveBook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnReserveBook.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReserveBookActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(141, 141, 141)
-                .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(156, 156, 156))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                        .addComponent(jLabel57)
-                        .addGap(264, 264, 264))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                        .addComponent(btnReturnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(198, 198, 198))))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addGap(201, 201, 201)
-                    .addComponent(jLabel58)
-                    .addContainerGap(741, Short.MAX_VALUE)))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addGap(175, 175, 175)
-                    .addComponent(btnReserveBook, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(681, Short.MAX_VALUE)))
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel17Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(jLabel57)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
-                .addComponent(btnReturnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(71, 71, 71))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel17Layout.createSequentialGroup()
-                    .addGap(53, 53, 53)
-                    .addComponent(jLabel58)
-                    .addContainerGap(371, Short.MAX_VALUE)))
-            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
-                    .addContainerGap(336, Short.MAX_VALUE)
-                    .addComponent(btnReserveBook, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(72, 72, 72)))
-        );
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        jLabel52.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lupa.png"))); // NOI18N
-
-        javax.swing.GroupLayout panelReservaLayout = new javax.swing.GroupLayout(panelReserva);
-        panelReserva.setLayout(panelReservaLayout);
-        panelReservaLayout.setHorizontalGroup(
-            panelReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(panelReservaLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel36)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        panelReservaLayout.setVerticalGroup(
-            panelReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelReservaLayout.createSequentialGroup()
-                .addGroup(panelReservaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelReservaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(panelReservaLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panelBackground.add(panelReserva, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 1020, 640));
 
         panelDataStudents.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1449,63 +1181,157 @@ public class Formulario extends javax.swing.JFrame {
 
         jLabel64.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel64.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel64.setText("Estudiantes con el libro");
-
-        jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel65.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel65.setText("Apellido");
-
-        jLabel68.setBackground(new java.awt.Color(246, 246, 246));
-        jLabel68.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel68.setForeground(new java.awt.Color(246, 246, 246));
-        jLabel68.setText("Nombre");
+        jLabel64.setText("Libros");
 
         txaStudent.setColumns(20);
         txaStudent.setRows(5);
         txaStudent.setEnabled(false);
         jScrollPane3.setViewportView(txaStudent);
 
+        jPanel21.setBackground(new java.awt.Color(60, 72, 107));
+
+        jLabel67.setBackground(new java.awt.Color(246, 246, 246));
+        jLabel67.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel67.setForeground(new java.awt.Color(246, 246, 246));
+        jLabel67.setText("Código");
+
+        btnReservar.setBackground(new java.awt.Color(0, 193, 212));
+        btnReservar.setText("Resevar");
+        btnReservar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReservar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnReservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservarActionPerformed(evt);
+            }
+        });
+
+        btnDevolver.setBackground(new java.awt.Color(0, 193, 212));
+        btnDevolver.setText("Devolver");
+        btnDevolver.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDevolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDevolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDevolverActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(jLabel67, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtBCodR, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel21Layout.createSequentialGroup()
+                        .addComponent(btnReservar, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel21Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtBCodR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel67))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReservar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(60, 72, 107));
+
+        jLabel68.setBackground(new java.awt.Color(246, 246, 246));
+        jLabel68.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel68.setForeground(new java.awt.Color(246, 246, 246));
+        jLabel68.setText("Nombre");
+
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(246, 246, 246));
+        jLabel65.setText("Apellido");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtSNameSearch)
+                    .addComponent(txtSSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel68))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtSSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel65))
+                .addContainerGap())
+        );
+
+        btnDeleteStudent.setBackground(new java.awt.Color(0, 193, 212));
+        btnDeleteStudent.setText("Borrar");
+        btnDeleteStudent.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnDeleteStudent.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDeleteStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteStudentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(52, 52, 52)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel65, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSNameSearch)
-                            .addComponent(txtSSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(66, 66, 66)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(117, 117, 117))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
                         .addComponent(jLabel64, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(214, 214, 214))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnDeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addComponent(btnDeleteStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
                 .addComponent(jLabel64)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtSNameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel68))
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtSSurnameSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel65))))
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 115, Short.MAX_VALUE))
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(101, 101, 101))
         );
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
@@ -1573,7 +1399,6 @@ public class Formulario extends javax.swing.JFrame {
         panelAddStudent.setVisible(false);
         panelBuscarBoooks.setVisible(false);
         panelInventarioBooks.setVisible(false); 
-        panelReserva.setVisible(false);
         panelDataStudents.setVisible(false);
         panelBuscarStudents.setVisible(false);
     }
@@ -1585,6 +1410,7 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnBookSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookSearchActionPerformed
         // TODO add your handling code here:
+        Book b;
         try {
             String bkcod;
             bkcod = txtBCodSearch.getText();
@@ -1609,6 +1435,7 @@ public class Formulario extends javax.swing.JFrame {
                 }
                 
                 txaLibroEstudiante.setText(c);
+                btnDeleteBook.setEnabled(true);
             }
             else{
                 txtBNameSearch.setText("");
@@ -1638,6 +1465,10 @@ public class Formulario extends javax.swing.JFrame {
     private void btnBookUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookUpdateActionPerformed
         // TODO add your handling code here:
         try {
+            Book b;
+            String bkcod;
+            bkcod = txtBCodSearch.getText();
+            b = lib.SearchBook(bkcod);
             String name, aut, edit, mat,cat;
             int ncop, year;
             if(b != null){
@@ -1649,13 +1480,7 @@ public class Formulario extends javax.swing.JFrame {
                 cat = txtBCategorySearch.getText();
                 year = Integer.parseInt(txtBYearSearch.getText());
                 
-                b.setName(name);
-                b.setAuthor(aut);
-                b.setEditorial(edit);
-                b.setMateria(mat);
-                b.setNcopy(ncop);
-                b.setCategory(cat);
-                b.setYear_edition(year);
+                lib.ModifyBook(b, name, aut, cat, mat, edit, year, ncop);
                 JOptionPane.showMessageDialog(null, "Libro Actualizado");
             }
             else JOptionPane.showMessageDialog(null, "No se encontró libro");
@@ -1688,13 +1513,13 @@ public class Formulario extends javax.swing.JFrame {
                 int n1,n2;
                 n1 = Integer.parseInt(ncopy);
                 n2 = Integer.parseInt(year);
-                b = new Book(materia, cod, cat, autor, editorial, materia, n1,n2);
-                lib.getBooks().add(b);
+                Book b = new Book(materia, cod, cat, autor, editorial, materia, n2,n1);
+                lib.Insert(b);
                 JOptionPane.showMessageDialog(null, "Libro Creado!");
 
             }
             else
-                JOptionPane.showMessageDialog(null, "Libro no creado");
+                JOptionPane.showMessageDialog(null, "Libro ya creado");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error");
         }
@@ -1715,8 +1540,8 @@ public class Formulario extends javax.swing.JFrame {
             surname = txtSSurnameCreate.getText();
             
             if(StudentInfoCheck(ced, name, surname)){
-                student = new Student(ced, name, surname);
-                lib.getStudents().add(student);
+                Student st = new Student(ced, name, surname);
+                lib.Insert(st);
                 JOptionPane.showMessageDialog(null, "Estudiante agregado");
             }
             else JOptionPane.showMessageDialog(null, "Datos Erroneos");
@@ -1732,37 +1557,6 @@ public class Formulario extends javax.swing.JFrame {
         panelAddStudent.setVisible(true);
     }//GEN-LAST:event_sliderBtnAddStudentsMouseClicked
 
-    private void btnSearchReserveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchReserveActionPerformed
-        // TODO add your handling code here:
-        String ced, cod;
-        
-        ced = txtSCedReserve.getText();
-        cod = txtBCodReserve.getText();
-        b = lib.SearchBook(cod);
-        student = lib.SearchStudent(ced);
-        
-        if(b != null && student != null){
-            txtSNameReserve.setText(student.getName());
-            txtSSurnameReserve.setText(student.getSurname());
-            txtBTitleReserve.setText(b.getName());
-            txtBAuthorReserve.setText(b.getAuthor());
-            txtBNumReserve.setText(b.getName());
-
-        }
-        
-        
-    }//GEN-LAST:event_btnSearchReserveActionPerformed
-
-    private void btnReserveBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReserveBookActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnReserveBookActionPerformed
-
-    private void sliderBtnReservaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnReservaMouseClicked
-        // TODO add your handling code here:
-        ocultarPaneles();
-        panelReserva.setVisible(true);
-    }//GEN-LAST:event_sliderBtnReservaMouseClicked
-
     private void sliderBtnDataStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnDataStudentMouseClicked
         // TODO add your handling code here:
         ocultarPaneles();
@@ -1771,10 +1565,38 @@ public class Formulario extends javax.swing.JFrame {
 
     private void btnStudentSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentSearchActionPerformed
         // TODO add your handling code here:
+        Student student;
+        String ced;
+        
+        ced = txtSCedSearch.getText();
+        student = lib.SearchStudent(ced);
+        
+        if(student != null){
+            txtSNameSearch.setText(student.getName());
+            txtSSurnameSearch.setText(student.getSurname());
+
+            String s = "";
+            for (int i = 0; i < student.getBooks_student().size(); i++) {
+                if(student.getBooks_student().get(i) != null)
+                    s+="[\n"+student.getBooks_student().get(i).toString()+"\n]\n";
+            }   
+            txaStudent.setText(s);
+            btnDeleteStudent.setEnabled(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "No registrado");
+            txtSNameSearch.setText("");
+            txtSSurnameCreate.setText("");
+        }
     }//GEN-LAST:event_btnStudentSearchActionPerformed
 
     private void btnStudentUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStudentUpdateActionPerformed
         // TODO add your handling code here:
+        String name, surname;
+        
+        name = txtSNameSearch.getText();
+        surname = txtSSurnameSearch.getText();
+        
+        
     }//GEN-LAST:event_btnStudentUpdateActionPerformed
 
     private void sliderBtnBuscarStudentsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnBuscarStudentsMouseClicked
@@ -1790,6 +1612,148 @@ public class Formulario extends javax.swing.JFrame {
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarActionPerformed
+        // TODO add your handling code here:
+        try {
+            Student student = lib.SearchStudent(txtSCedSearch.getText());
+            Book auxBook = lib.SearchBook(txtBCodR.getText());
+            if(!student.IsBooking(auxBook)){
+                if(lib.ReserveBook(student, auxBook))
+                    JOptionPane.showMessageDialog(null, "Libro reservado con éxito");
+                else
+                    JOptionPane.showMessageDialog(null, "Libro no disponible");       
+            }
+            else
+                JOptionPane.showMessageDialog(null, "Libro ya reservado");
+            
+        } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "ERROR");
+        }finally{
+            txtSNameSearch.setText("");
+            txtSSurnameSearch.setText("");
+            txtBCodR.setText("");
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnReservarActionPerformed
+
+    private void btnDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverActionPerformed
+        // TODO add your handling code here:
+        try {
+            Student student = lib.SearchStudent(txtSCedSearch.getText());
+            Book auxBook = lib.SearchBook(txtBCodR.getText());
+            if(student.ReturnBook(auxBook))
+                JOptionPane.showMessageDialog(null, "Libro devuelto con éxito");
+            else
+                JOptionPane.showMessageDialog(null, "El estudiante no contaba con el libro");
+            txtSNameSearch.setText("");
+            txtSSurnameCreate.setText("");
+        } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+        }finally{
+            txtSNameSearch.setText("");
+            txtSSurnameSearch.setText("");
+            txtBCodR.setText("");
+        }
+        
+    }//GEN-LAST:event_btnDevolverActionPerformed
+
+    private void btnDeleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteBookActionPerformed
+        // TODO add your handling code here:
+        try {
+            Book b = lib.SearchBook(txtBCodSearch.getText());
+            if(lib.Delete(b)){
+                JOptionPane.showMessageDialog(null, "Borrado Correctamente");
+                txtBNameSearch.setText("");
+                txtBAuthorSearch.setText("");
+                txtBEditorialSearch.setText("");
+                txtBMateriaSearch.setText("");
+                txtBNcopiasSearch.setText("");
+                txtBCategorySearch.setText("");
+                txtBYearSearch.setText("");
+            
+            }
+            else
+                JOptionPane.showMessageDialog(null, "El libro está reservado por un estudiante");
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "El libro no estáregistrado");
+        }finally{
+            btnDeleteBook.setEnabled(false);
+        }
+        
+        
+    }//GEN-LAST:event_btnDeleteBookActionPerformed
+
+    private void btnDeleteStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteStudentActionPerformed
+        // TODO add your handling code here:
+        try {
+            Student st = lib.SearchStudent(txtSCedSearch.getText());
+            if(lib.Delete(st)){
+                JOptionPane.showMessageDialog(null, "Borrado Correctamente");
+                txtSNameSearch.setText("");
+                txtSSurnameSearch.setText("");
+                txtBCodR.setText("");
+            }
+            else
+                JOptionPane.showMessageDialog(null, "El estudiante tiene libros reservados");
+        } catch(Exception e) {
+            JOptionPane.showMessageDialog(null, "Estudiante estáregistrado");
+        }finally{
+            btnDeleteStudent.setEnabled(false);
+        }
+    }//GEN-LAST:event_btnDeleteStudentActionPerformed
+
+    private void txtBCodCreateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBCodCreateKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        
+        if (!ValidKeys(key, 3)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtBCodCreateKeyTyped
+
+    private void txtBNCopyCreateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBNCopyCreateKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        if (!ValidKeys(key, 1)) {
+            evt.consume();
+        }
+
+    }//GEN-LAST:event_txtBNCopyCreateKeyTyped
+
+    private void txtBYearCreateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBYearCreateKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        if (!ValidKeys(key, 1)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtBYearCreateKeyTyped
+
+    private void txtBNcopiasSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBNcopiasSearchKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        if (!ValidKeys(key, 1)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtBNcopiasSearchKeyTyped
+
+    private void txtBYearSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBYearSearchKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        if (!ValidKeys(key, 1)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtBYearSearchKeyTyped
+
+    private void txtSCedulaCreateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSCedulaCreateKeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        if (!ValidKeys(key, 1)) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtSCedulaCreateKeyTyped
 
     public boolean StudentInfoCheck(String ced, String name, String surname){
         System.out.println("");
@@ -1820,6 +1784,29 @@ public class Formulario extends javax.swing.JFrame {
             return false;
         }
         return true;
+        
+    }
+    
+    /***\
+     * 
+     * @param key Valor letra en ascii
+     * @param type Tipo de caracter 1-Num 2-Letras 3-COD
+     * @return True or false
+     */
+    public boolean ValidKeys(int key, int type){
+        //Números
+        if(type == 1)
+            return key >= 48 && key <= 57;
+            
+        //Letras
+        if(type == 2)
+            return key >= 65 && key <= 90 || key >= 97 && key <= 122;
+        
+        //Cod
+        if(type == 3)
+            return key >= 65 && key <= 90 || key >= 48 && key <= 57;
+        
+        return false;
         
     }
     
@@ -1908,8 +1895,8 @@ public class Formulario extends javax.swing.JFrame {
     
     
     //Mis Atributos
-    private Student student;
-    private Book b;
+//    private Student student;
+//    private Book b;
     private Library lib;
     
 
@@ -1917,11 +1904,12 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JButton btnBookCreate;
     private javax.swing.JButton btnBookSearch;
     private javax.swing.JButton btnBookUpdate;
+    private javax.swing.JButton btnDeleteBook;
+    private javax.swing.JButton btnDeleteStudent;
+    private javax.swing.JButton btnDevolver;
     private javax.swing.JButton btnLoad;
-    private javax.swing.JButton btnReserveBook;
-    private javax.swing.JButton btnReturnBook;
+    private javax.swing.JButton btnReservar;
     private javax.swing.JButton btnSave;
-    private javax.swing.JButton btnSearchReserve;
     private javax.swing.JButton btnStudenCreate;
     private javax.swing.JButton btnStudentSearch;
     private javax.swing.JButton btnStudentUpdate;
@@ -1930,7 +1918,6 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbxBooks;
     private javax.swing.JComboBox<String> cbxStudents;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -1958,7 +1945,6 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -1967,33 +1953,23 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
     private javax.swing.JLabel jLabel46;
     private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
-    private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -2001,16 +1977,13 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
@@ -2025,7 +1998,6 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JPanel panelBuscarStudents;
     private javax.swing.JPanel panelDataStudents;
     private javax.swing.JPanel panelInventarioBooks;
-    private javax.swing.JPanel panelReserva;
     private javax.swing.JPanel panelSlider;
     private javax.swing.JPanel panelTitle;
     private javax.swing.JPanel panelTitle1;
@@ -2035,18 +2007,16 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JPanel sliderBtnBuscarStudents;
     private javax.swing.JPanel sliderBtnDataStudent;
     private javax.swing.JPanel sliderBtnInventarioBook;
-    private javax.swing.JPanel sliderBtnReserva;
     private javax.swing.JTable tableBooks1;
     private javax.swing.JTable tableBooks2;
     private javax.swing.JTextArea txaLibroEstudiante;
     private javax.swing.JTextArea txaStudent;
     private javax.swing.JTextField txtBAuthorCreate;
-    private javax.swing.JTextField txtBAuthorReserve;
     private javax.swing.JTextField txtBAuthorSearch;
     private javax.swing.JTextField txtBCategoryCreate;
     private javax.swing.JTextField txtBCategorySearch;
     private javax.swing.JTextField txtBCodCreate;
-    private javax.swing.JTextField txtBCodReserve;
+    private javax.swing.JTextField txtBCodR;
     private javax.swing.JTextField txtBCodSearch;
     private javax.swing.JTextField txtBEditorialCreate;
     private javax.swing.JTextField txtBEditorialSearch;
@@ -2056,18 +2026,13 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JTextField txtBNameCreate;
     private javax.swing.JTextField txtBNameSearch;
     private javax.swing.JTextField txtBNcopiasSearch;
-    private javax.swing.JTextField txtBNumReserve;
-    private javax.swing.JTextField txtBTitleReserve;
     private javax.swing.JTextField txtBYearCreate;
     private javax.swing.JTextField txtBYearSearch;
-    private javax.swing.JTextField txtSCedReserve;
     private javax.swing.JTextField txtSCedSearch;
     private javax.swing.JTextField txtSCedulaCreate;
     private javax.swing.JTextField txtSNameCreate;
-    private javax.swing.JTextField txtSNameReserve;
     private javax.swing.JTextField txtSNameSearch;
     private javax.swing.JTextField txtSSurnameCreate;
-    private javax.swing.JTextField txtSSurnameReserve;
     private javax.swing.JTextField txtSSurnameSearch;
     // End of variables declaration//GEN-END:variables
 }

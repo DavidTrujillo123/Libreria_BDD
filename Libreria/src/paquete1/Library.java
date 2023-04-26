@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -89,42 +90,58 @@ public class Library implements IOperatiosLibrary {
     }
 
     @Override
-    public void Insert(Book obj) {
-        int index = getIndexBook(obj.getCode());
-        //if(index==-1)
-            books.add(obj);
-    }
-
-    @Override
-    public void Delete(String ID) {
-        int index = getIndexBook(ID);
-        if (index != -1) {
-            books.remove(index);
+    public void Insert(Object obj) {
+        if(obj instanceof Student){
+            students.add((Student)obj);
+            
+        }    
+        else{
+            books.add((Book)obj);
         }
     }
 
     @Override
-    public void ModifyBook(String ID, Book new_book) {
-        int index = getIndexBook(ID);
-        if (index != -1) {
-            books.remove(index);
-            books.add(index, new_book);
-        }
-    }
-
-    @Override
-    public void ModifyStudent(String ID, String IDreturn_book) {
-        int indexID = getIndexStudent(ID);
-        int indexIDBook = getIndexBook(ID);
-        if (indexID != -1 && indexIDBook != -1) {
-            Student st = students.get(indexID);
-            ArrayList<Book> studentBooks = st.getBooks_student();
-            for (int i = 0; i < studentBooks.size(); i++) {
-                if ((studentBooks.get(i).getCode()).equals(IDreturn_book)) {
-                    studentBooks.remove(i);
-                }
+    public boolean Delete(Object obj) {
+        
+        if(obj instanceof Student){
+            Student st = (Student) obj;
+            if(st.getBooks_student().isEmpty()){
+                this.students.remove(st);
+                return true;
             }
+        }    
+        else{
+            Book b = (Book) obj;
+            for(int i = 0; i < students.size(); i++){
+                if(students.get(i) != null && students.get(i).IsBooking(b))
+                    return false;
+            }
+            this.books.remove(b);
+            return true;
         }
+        
+        return false;
+        
+    }
+
+   @Override
+   public void ModifyBook(Book b, String name, String author, String cat,
+            String materia, String editorial, int year, int ncopy){
+        b.setName(name);
+        b.setAuthor(author);
+        b.setEditorial(editorial);
+        b.setMateria(materia);
+        b.setNcopy(ncopy);
+        b.setCategory(cat);
+        b.setYear_edition(year);
+   }
+
+    @Override
+    public void ModifyStudent(String ID, String name, String surname) {
+        Student s = SearchStudent(ID);
+        s.setName(name);
+        s.setSurname(surname);
+        
     }
 
     @Override
@@ -173,13 +190,17 @@ public class Library implements IOperatiosLibrary {
     }
     
     
-    public boolean Reserve(Student s, Book b){
+    public boolean ReserveBook(Student s, Book b){
         if(b.getNcopy() > 0){
             s.AddBook(b);
             b.setNcopy(b.getNcopy()-1);
             return true;
         }
         return false;
+    }
+    public void ReturnBook(Student s, Book b){
+        s.getBooks_student().remove(b);
+        b.setNcopy(b.getNcopy()+1);
     }
     
     
