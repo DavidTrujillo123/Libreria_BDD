@@ -9,12 +9,12 @@ package paquete1;
  * @author david
  */
 public class Book {
-    private String category;
     private String code;
     private String name;
     private String author;
-    private String editorial;
+    private String category;
     private String materia;
+    private String editorial;
     private int year_edition;
     private int ncopy;
 

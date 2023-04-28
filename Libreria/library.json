@@ -1,0 +1,306 @@
+{
+  "code": "E12345",
+  "name": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "category": "Fiction",
+  "materia": "Literature",
+  "editorial": "HarperCollins",
+  "year_edition": 1960,
+  "ncopy": 16
+}
+{
+  "code": "13579",
+  "name": "Into Thin Air",
+  "author": "Jon Krakauer",
+  "category": "Travel",
+  "materia": "Mountaineering",
+  "editorial": "Villard Books",
+  "year_edition": 1997,
+  "ncopy": 6
+}
+{
+  "code": "97531",
+  "name": "The Story of Art",
+  "author": "E.H. Gombrich",
+  "category": "Art",
+  "materia": "Art History",
+  "editorial": "Phaidon Press",
+  "year_edition": 1950,
+  "ncopy": 4
+}
+{
+  "code": "78912",
+  "name": "Mastering the Art of French Cooking",
+  "author": "Julia Child",
+  "category": "Cooking",
+  "materia": "French Cuisine",
+  "editorial": "Alfred A. Knopf",
+  "year_edition": 1961,
+  "ncopy": 4
+}
+{
+  "code": "A67890",
+  "name": "A Brief History of Time",
+  "author": "Stephen Hawking",
+  "category": "Science",
+  "materia": "Physics",
+  "editorial": "Bantam Books",
+  "year_edition": 1988,
+  "ncopy": 4
+}
+{
+  "code": "80246",
+  "name": "Friday Night Lights",
+  "author": "H.G. Bissinger",
+  "category": "Sports",
+  "materia": "Football",
+  "editorial": "Da Capo Press",
+  "year_edition": 1990,
+  "ncopy": 2
+}
+{
+  "code": "D24680",
+  "name": "Steve Jobs",
+  "author": "Walter Isaacson",
+  "category": "Biography",
+  "materia": "Business",
+  "editorial": "Simon \u0026 Schuster",
+  "year_edition": 2011,
+  "ncopy": 1
+}
+{
+  "code": "86420",
+  "name": "The Rise and Fall of the Third Reich",
+  "author": "William L. Shirer",
+  "category": "History",
+  "materia": "World War II",
+  "editorial": "Simon \u0026 Schuster",
+  "year_edition": 1960,
+  "ncopy": 0
+}
+
+{
+  "cedula": "1004096192",
+  "name": "Victor",
+  "surname": "Echeverría",
+  "books_student": [
+    {
+      "code": "80246",
+      "name": "Friday Night Lights",
+      "author": "H.G. Bissinger",
+      "category": "Sports",
+      "materia": "Football",
+      "editorial": "Da Capo Press",
+      "year_edition": 1990,
+      "ncopy": 2
+    },
+    {
+      "code": "97531",
+      "name": "The Story of Art",
+      "author": "E.H. Gombrich",
+      "category": "Art",
+      "materia": "Art History",
+      "editorial": "Phaidon Press",
+      "year_edition": 1950,
+      "ncopy": 4
+    },
+    {
+      "code": "E12345",
+      "name": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "materia": "Literature",
+      "editorial": "HarperCollins",
+      "year_edition": 1960,
+      "ncopy": 17
+    }
+  ]
+}
+{
+  "cedula": "1004654651",
+  "name": "Cristian",
+  "surname": "Castro",
+  "books_student": [
+    {
+      "code": "78912",
+      "name": "Mastering the Art of French Cooking",
+      "author": "Julia Child",
+      "category": "Cooking",
+      "materia": "French Cuisine",
+      "editorial": "Alfred A. Knopf",
+      "year_edition": 1961,
+      "ncopy": 4
+    },
+    {
+      "code": "E12345",
+      "name": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "materia": "Literature",
+      "editorial": "HarperCollins",
+      "year_edition": 1960,
+      "ncopy": 16
+    }
+  ]
+}
+{
+  "cedula": "1004451884",
+  "name": "Jordi",
+  "surname": "Cahuasqui",
+  "books_student": [
+    {
+      "code": "86420",
+      "name": "The Rise and Fall of the Third Reich",
+      "author": "William L. Shirer",
+      "category": "History",
+      "materia": "World War II",
+      "editorial": "Simon \u0026 Schuster",
+      "year_edition": 1960,
+      "ncopy": 0
+    },
+    {
+      "code": "D24680",
+      "name": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "category": "Biography",
+      "materia": "Business",
+      "editorial": "Simon \u0026 Schuster",
+      "year_edition": 2011,
+      "ncopy": 1
+    }
+  ]
+}
+{
+  "cedula": "0401751227",
+  "name": "Brayan",
+  "surname": "De la Cruz",
+  "books_student": [
+    {
+      "code": "E12345",
+      "name": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "materia": "Literature",
+      "editorial": "HarperCollins",
+      "year_edition": 1960,
+      "ncopy": 17
+    },
+    {
+      "code": "13579",
+      "name": "Into Thin Air",
+      "author": "Jon Krakauer",
+      "category": "Travel",
+      "materia": "Mountaineering",
+      "editorial": "Villard Books",
+      "year_edition": 1997,
+      "ncopy": 6
+    },
+    {
+      "code": "97531",
+      "name": "The Story of Art",
+      "author": "E.H. Gombrich",
+      "category": "Art",
+      "materia": "Art History",
+      "editorial": "Phaidon Press",
+      "year_edition": 1950,
+      "ncopy": 4
+    }
+  ]
+}
+{
+  "cedula": "1050323235",
+  "name": "Dylan",
+  "surname": "Mora",
+  "books_student": []
+}
+{
+  "cedula": "1003962824",
+  "name": "Rafael",
+  "surname": "Rosero",
+  "books_student": [
+    {
+      "code": "D24680",
+      "name": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "category": "Biography",
+      "materia": "Business",
+      "editorial": "Simon \u0026 Schuster",
+      "year_edition": 2011,
+      "ncopy": 2
+    }
+  ]
+}
+{
+  "cedula": "1004428510",
+  "name": "Ala",
+  "surname": "Sandoval",
+  "books_student": [
+    {
+      "code": "E12345",
+      "name": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "materia": "Literature",
+      "editorial": "HarperCollins",
+      "year_edition": 1960,
+      "ncopy": 17
+    },
+    {
+      "code": "13579",
+      "name": "Into Thin Air",
+      "author": "Jon Krakauer",
+      "category": "Travel",
+      "materia": "Mountaineering",
+      "editorial": "Villard Books",
+      "year_edition": 1997,
+      "ncopy": 6
+    },
+    {
+      "code": "97531",
+      "name": "The Story of Art",
+      "author": "E.H. Gombrich",
+      "category": "Art",
+      "materia": "Art History",
+      "editorial": "Phaidon Press",
+      "year_edition": 1950,
+      "ncopy": 4
+    },
+    {
+      "code": "78912",
+      "name": "Mastering the Art of French Cooking",
+      "author": "Julia Child",
+      "category": "Cooking",
+      "materia": "French Cuisine",
+      "editorial": "Alfred A. Knopf",
+      "year_edition": 1961,
+      "ncopy": 4
+    },
+    {
+      "code": "A67890",
+      "name": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "category": "Science",
+      "materia": "Physics",
+      "editorial": "Bantam Books",
+      "year_edition": 1988,
+      "ncopy": 4
+    },
+    {
+      "code": "80246",
+      "name": "Friday Night Lights",
+      "author": "H.G. Bissinger",
+      "category": "Sports",
+      "materia": "Football",
+      "editorial": "Da Capo Press",
+      "year_edition": 1990,
+      "ncopy": 2
+    }
+  ]
+}
+{
+  "cedula": "1004542542",
+  "name": "David",
+  "surname": "Trujillo",
+  "books_student": []
+}
+

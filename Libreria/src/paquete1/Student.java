@@ -72,6 +72,14 @@ public class Student {
         return false;
     }
     
+    public boolean IsBooking(Book b){
+        for (int i = 0; i < books_student.size(); i++) {
+            if(books_student.get(i) != null && books_student.get(i) == b)
+                return true;
+        }
+        return false;
+    }
+    
     @Override
     public String toString() {
         String c="";

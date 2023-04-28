@@ -9,10 +9,11 @@ package paquete1;
  * @author david
  */
 public interface IOperatiosLibrary {
-    public void Insert(Book obj);
-    public void Delete(String ID);
-    public void ModifyBook(String ID_after, Book new_book);
-    public void ModifyStudent(String ID, String IDreturn_book);
+    public void Insert(Object obj);
+    public boolean Delete(Object obj);
+    public void ModifyBook(Book b, String name, String author, String cat,
+            String materia, String editorial, int year, int ncopy);
+    public void ModifyStudent(String ID, String name, String surname);
     public Book SearchBook(String ID);
     public Student SearchStudent(String ID);
 }

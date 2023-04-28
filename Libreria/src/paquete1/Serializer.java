@@ -4,12 +4,13 @@
  */
 package paquete1;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,34 +18,115 @@ import java.io.FileOutputStream;
  */
 public class Serializer {
     
-    XMLDecoder decoder;
-    XMLEncoder encoder;
+    private ArrayList<Object> aux;
+    private Gson gson;
     
-    public Serializer(String name)
+    public Serializer()
     {
+        aux = new ArrayList<>();
+        gson = new GsonBuilder().setPrettyPrinting().create();
+    }
+    
+    public Boolean Serialize(Library library, String route)
+    {
+        File file = new File(route);
+        Object aux;
+        String json;
+        
+        ArrayList<Book> books = library.getBooks();
+        ArrayList<Student> students = library.getStudents();
+        
+        try (var pw = new PrintWriter(file)) {
+            
+            for (int i = 0; i < books.size(); i++) 
+            {
+                if(books.get(i) != null)
+                {
+                    aux = books.get(i);
+                    json = TransformarJson(gson, aux);
+                    EscribirJson(pw, json);
+                }
+            }
+            EscribirJson(pw, "");
+            for (int i = 0; i < students.size(); i++) 
+            {
+                if(students.get(i) != null)
+                {
+                    aux = students.get(i);
+                    json = TransformarJson(gson, aux);
+                    EscribirJson(pw, json);
+                }
+            }
+            EscribirJson(pw, "");
+        }catch (Exception e) {
+            return false;
+        }
+
+        return true;
+    }
+    
+    private String TransformarJson(Gson gson, Object o){
+        return gson.toJson(o);
+    }
+    
+    private void EscribirJson(PrintWriter pr,String s){
+        pr.write(s+"\n");
+    }
+    
+    public boolean Deserialize(Library library, String route)
+    {
+        String json = "";
+        String line;
+        
+        ArrayList<Book> books = library.getBooks();
+        ArrayList<Student> students = library.getStudents();
+        
+        books.clear();
+        students.clear();
+        
+        Book book;
+        Student student;
+        
         try
         {
-            FileOutputStream fileOutputStream = new FileOutputStream(name);
-            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
-            encoder = new XMLEncoder(bufferedOutputStream);
+            FileReader fr = new FileReader(route);
+            BufferedReader br = new BufferedReader(fr);
             
-            FileInputStream fileInputStream = new FileInputStream(name);
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
-            decoder = new XMLDecoder(bufferedInputStream);
+            while(!(line = br.readLine()).equals(""))
+            {
+                json += line;
+                if(line.compareTo("}")==0)
+                {
+                    book = gson.fromJson(json, Book.class);
+                    books.add(book);
+                    json = "";
+                }
+            }
+            int i = 0;
+            while((line = br.readLine()) != null)
+            {
+                json += line;
+                
+                if(line.compareTo("{") == 0) i++;
+                
+                if(line.compareTo("}") == 0)
+                {
+                    i--;
+                }
+                if(i == 0)
+                {
+                    student = gson.fromJson(json, Student.class);
+                    students.add(student);
+                    System.out.println(json);
+                    json = "";
+                }
+            }
+            
+            return true;
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            return false;
         }
-    }
-    
-    public void Serialize(Object object)
-    {
-        encoder.writeObject(object);
-    }
-    
-    public Object Deserialize()
-    {
-        return decoder.readObject();
     }
 }
