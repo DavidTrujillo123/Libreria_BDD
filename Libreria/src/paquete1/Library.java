@@ -220,19 +220,16 @@ public class Library implements IOperatiosLibrary {
      */
     public void SortBooks(int index)
     {
-        for (int i = 0; i < 1; i++)
+        switch(index)
         {
-            switch(index)
-            {
-                case 1 -> SortBookCode(books);
-                case 2 -> SortBookName(books);
-                case 3 -> SortBookAuthor(books);
-                case 4 -> SortBookCategory(books);
-                case 5 -> SorBooktMateria(books);
-                case 6 -> SortBookEditorial(books);
-                case 7 -> SortBookYearEdition(books);
-                case 8 -> SortBookNumberCopies(books);
-            }
+            case 1 -> SortBookCode(books);
+            case 2 -> SortBookName(books);
+            case 3 -> SortBookAuthor(books);
+            case 4 -> SortBookCategory(books);
+            case 5 -> SorBooktMateria(books);
+            case 6 -> SortBookEditorial(books);
+            case 7 -> SortBookYearEdition(books);
+            case 8 -> SortBookNumberCopies(books);
         }
     }
     
@@ -244,15 +241,12 @@ public class Library implements IOperatiosLibrary {
      */
     public void SortStudents(int index)
     {
-        for (int i = 0; i < 10; i++) 
+        switch(index)
         {
-            switch(index)
-            {
-                case 1 -> SortCedula(students);
-                case 2 -> SortStudentName(students);
-                case 3 -> SortStudentSurName(students);
-                case 4 -> SortNumberOfBooks(students);
-            }
+            case 1 -> SortCedula(students);
+            case 2 -> SortStudentName(students);
+            case 3 -> SortStudentSurName(students);
+            case 4 -> SortNumberOfBooks(students);
         }
     }
     
@@ -303,7 +297,7 @@ public class Library implements IOperatiosLibrary {
     {
         students.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
     }
-    private void SortStudentSurName(ArrayList<Student> lista)
+    private void SortStudentSurName(ArrayList<Student> students)
     {
         students.sort((o1, o2) -> o1.getSurname().compareTo(o2.getSurname()));
     }

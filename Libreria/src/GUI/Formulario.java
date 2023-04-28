@@ -95,8 +95,6 @@ public class Formulario extends javax.swing.JFrame {
         panelTitle = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         cbxBooks = new javax.swing.JComboBox<>();
-        btnLoad = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tableBooks = new javax.swing.JTable();
@@ -592,26 +590,6 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
-        btnLoad.setBackground(new java.awt.Color(0, 193, 212));
-        btnLoad.setText("Cargar");
-        btnLoad.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnLoad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnLoad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLoadActionPerformed(evt);
-            }
-        });
-
-        btnSave.setBackground(new java.awt.Color(0, 193, 212));
-        btnSave.setText("Guardar");
-        btnSave.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSave.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSaveActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelTitleLayout = new javax.swing.GroupLayout(panelTitle);
         panelTitle.setLayout(panelTitleLayout);
         panelTitleLayout.setHorizontalGroup(
@@ -621,15 +599,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addGroup(panelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbxBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(338, 338, 338)
-                .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        panelTitleLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnLoad, btnSave});
-
         panelTitleLayout.setVerticalGroup(
             panelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTitleLayout.createSequentialGroup()
@@ -638,12 +609,6 @@ public class Formulario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbxBooks, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
-            .addGroup(panelTitleLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addGroup(panelTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnLoad, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                    .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(57, 57, 57))
         );
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1068,9 +1033,9 @@ public class Formulario extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTitle1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
+                .addGap(2, 2, 2)
                 .addComponent(cbxStudents, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addGap(44, 44, 44))
         );
 
         jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1414,12 +1379,13 @@ public class Formulario extends javax.swing.JFrame {
         panelDataStudents.setVisible(false);
         panelBuscarStudents.setVisible(false);
     }
+    
     private void sliderBtnInventarioBookMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnInventarioBookMouseClicked
         // TODO add your handling code here:
+        lib.Deserialize("library.json");
         ocultarPaneles();
         panelInventarioBooks.setVisible(true);
         ActualizarTablaLibros();
-        btnLoad.doClick();
     }//GEN-LAST:event_sliderBtnInventarioBookMouseClicked
 
     private void btnBookSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookSearchActionPerformed
@@ -1518,15 +1484,15 @@ public class Formulario extends javax.swing.JFrame {
             year = txtBYearCreate.getText();
 
             datos = BookCreateCheck(cod, nombre, autor, cat, editorial, materia, ncopy, year);
-
-            
             
             if(datos && lib.getIndexBook(cod) == -1){
                 int n1,n2;
                 n1 = Integer.parseInt(ncopy);
                 n2 = Integer.parseInt(year);
-                Book b = new Book(materia, cod, cat, autor, editorial, materia, n2,n1);
+                Book b = new Book(cat, cod, nombre, autor, editorial, materia, n2,n1);
+                System.out.println(b);
                 lib.Insert(b);
+                lib.Serialize("library.json");
                 JOptionPane.showMessageDialog(null, "Libro Creado!");
 
             }
@@ -1554,6 +1520,7 @@ public class Formulario extends javax.swing.JFrame {
             if(StudentInfoCheck(ced, name, surname)){
                 Student st = new Student(ced, name, surname);
                 lib.Insert(st);
+                lib.Serialize("library.json");
                 JOptionPane.showMessageDialog(null, "Estudiante agregado");
             }
             else JOptionPane.showMessageDialog(null, "Datos Erroneos");
@@ -1571,6 +1538,7 @@ public class Formulario extends javax.swing.JFrame {
 
     private void sliderBtnDataStudentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sliderBtnDataStudentMouseClicked
         // TODO add your handling code here:
+        lib.Deserialize("library.json");
         ocultarPaneles();
         panelDataStudents.setVisible(true);
         ActualizarTablaEstudiantes();
@@ -1618,34 +1586,6 @@ public class Formulario extends javax.swing.JFrame {
         panelBuscarStudents.setVisible(true);
     }//GEN-LAST:event_sliderBtnBuscarStudentsMouseClicked
 
-    private void btnLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoadActionPerformed
-        // TODO add your handling code here:
-        lib.Deserialize("library.json");
-        
-        DefaultTableModel model = (DefaultTableModel) tableBooks.getModel();
-        tableBooks.removeMouseListener(panelOptiosTableBooks);
-//        model.setRowCount(0);
-        int rowCount = model.getRowCount();
-        for (int i = rowCount - 1; i >= 0; i--) {
-            model.removeRow(i);
-        }
-        for (Book book : lib.getBooks()) {
-            if (book != null) {
-                Object[] fila = {
-                    book.getCode(), book.getName(), book.getAuthor(), book.getCategory(),
-                    book.getEditorial(), book.getYear_edition(), book.getNcopy(), book.getMateria(), "Guardar"
-                };
-                model.addRow(fila);
-            }
-        }
-        tableBooks.addMouseListener(panelOptiosTableBooks);
-    }//GEN-LAST:event_btnLoadActionPerformed
-
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-        // TODO add your handling code here:
-        lib.Serialize("library.json");
-    }//GEN-LAST:event_btnSaveActionPerformed
-
     private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarActionPerformed
         // TODO add your handling code here:
         try {
@@ -1653,7 +1593,10 @@ public class Formulario extends javax.swing.JFrame {
             Book auxBook = lib.SearchBook(txtBCodR.getText());
             if(!student.IsBooking(auxBook)){
                 if(lib.ReserveBook(student, auxBook))
+                {
                     JOptionPane.showMessageDialog(null, "Libro reservado con éxito");
+                    lib.Serialize("library.json");
+                }
                 else
                     JOptionPane.showMessageDialog(null, "Libro no disponible");       
             }
@@ -1678,7 +1621,10 @@ public class Formulario extends javax.swing.JFrame {
             Student student = lib.SearchStudent(txtSCedSearch.getText());
             Book auxBook = lib.SearchBook(txtBCodR.getText());
             if(student.ReturnBook(auxBook))
+            {
                 JOptionPane.showMessageDialog(null, "Libro devuelto con éxito");
+                lib.Serialize("library.json");
+            }
             else
                 JOptionPane.showMessageDialog(null, "El estudiante no contaba con el libro");
             txtSNameSearch.setText("");
@@ -2016,9 +1962,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JButton btnDeleteBook;
     private javax.swing.JButton btnDeleteStudent;
     private javax.swing.JButton btnDevolver;
-    private javax.swing.JButton btnLoad;
     private javax.swing.JButton btnReservar;
-    private javax.swing.JButton btnSave;
     private javax.swing.JButton btnStudenCreate;
     private javax.swing.JButton btnStudentSearch;
     private javax.swing.JButton btnStudentUpdate;
