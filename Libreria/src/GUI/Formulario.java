@@ -1645,6 +1645,7 @@ public class Formulario extends javax.swing.JFrame {
             Book b = lib.SearchBook(txtBCodSearch.getText());
             if(lib.Delete(b)){
                 JOptionPane.showMessageDialog(null, "Borrado Correctamente");
+                lib.Serialize("library.json");
                 txtBNameSearch.setText("");
                 txtBAuthorSearch.setText("");
                 txtBEditorialSearch.setText("");
@@ -1671,6 +1672,7 @@ public class Formulario extends javax.swing.JFrame {
             Student st = lib.SearchStudent(txtSCedSearch.getText());
             if(lib.Delete(st)){
                 JOptionPane.showMessageDialog(null, "Borrado Correctamente");
+                lib.Serialize("library.json");
                 txtSNameSearch.setText("");
                 txtSSurnameSearch.setText("");
                 txtBCodR.setText("");
